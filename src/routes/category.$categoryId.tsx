@@ -79,7 +79,7 @@ function CategoryPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {category.items.map((item) => {
+            {category.items.map((item: (typeof category.items)[number]) => {
               const primary = lang === "en" ? item.en : item.fr;
               const secondary = lang === "en" ? item.fr : item.en;
               const primaryLabel = lang === "en" ? "English" : "Français";

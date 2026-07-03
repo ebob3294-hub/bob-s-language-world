@@ -10,33 +10,89 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PlayQuizRouteImport } from './routes/play.quiz'
+import { Route as PlayMatchingRouteImport } from './routes/play.matching'
+import { Route as PlayFlashcardsRouteImport } from './routes/play.flashcards'
+import { Route as CategoryCategoryIdRouteImport } from './routes/category.$categoryId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlayQuizRoute = PlayQuizRouteImport.update({
+  id: '/play/quiz',
+  path: '/play/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayMatchingRoute = PlayMatchingRouteImport.update({
+  id: '/play/matching',
+  path: '/play/matching',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayFlashcardsRoute = PlayFlashcardsRouteImport.update({
+  id: '/play/flashcards',
+  path: '/play/flashcards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoryCategoryIdRoute = CategoryCategoryIdRouteImport.update({
+  id: '/category/$categoryId',
+  path: '/category/$categoryId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/category/$categoryId': typeof CategoryCategoryIdRoute
+  '/play/flashcards': typeof PlayFlashcardsRoute
+  '/play/matching': typeof PlayMatchingRoute
+  '/play/quiz': typeof PlayQuizRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/category/$categoryId': typeof CategoryCategoryIdRoute
+  '/play/flashcards': typeof PlayFlashcardsRoute
+  '/play/matching': typeof PlayMatchingRoute
+  '/play/quiz': typeof PlayQuizRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/category/$categoryId': typeof CategoryCategoryIdRoute
+  '/play/flashcards': typeof PlayFlashcardsRoute
+  '/play/matching': typeof PlayMatchingRoute
+  '/play/quiz': typeof PlayQuizRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/category/$categoryId'
+    | '/play/flashcards'
+    | '/play/matching'
+    | '/play/quiz'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/category/$categoryId'
+    | '/play/flashcards'
+    | '/play/matching'
+    | '/play/quiz'
+  id:
+    | '__root__'
+    | '/'
+    | '/category/$categoryId'
+    | '/play/flashcards'
+    | '/play/matching'
+    | '/play/quiz'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CategoryCategoryIdRoute: typeof CategoryCategoryIdRoute
+  PlayFlashcardsRoute: typeof PlayFlashcardsRoute
+  PlayMatchingRoute: typeof PlayMatchingRoute
+  PlayQuizRoute: typeof PlayQuizRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +104,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/play/quiz': {
+      id: '/play/quiz'
+      path: '/play/quiz'
+      fullPath: '/play/quiz'
+      preLoaderRoute: typeof PlayQuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/matching': {
+      id: '/play/matching'
+      path: '/play/matching'
+      fullPath: '/play/matching'
+      preLoaderRoute: typeof PlayMatchingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/flashcards': {
+      id: '/play/flashcards'
+      path: '/play/flashcards'
+      fullPath: '/play/flashcards'
+      preLoaderRoute: typeof PlayFlashcardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/category/$categoryId': {
+      id: '/category/$categoryId'
+      path: '/category/$categoryId'
+      fullPath: '/category/$categoryId'
+      preLoaderRoute: typeof CategoryCategoryIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CategoryCategoryIdRoute: CategoryCategoryIdRoute,
+  PlayFlashcardsRoute: PlayFlashcardsRoute,
+  PlayMatchingRoute: PlayMatchingRoute,
+  PlayQuizRoute: PlayQuizRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
