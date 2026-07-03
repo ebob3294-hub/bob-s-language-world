@@ -88,8 +88,35 @@ function Home() {
           </div>
         </section>
 
+        {/* Stories */}
+        <section className="mb-20">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 bg-bob-pink rounded-lg grid place-items-center text-xl">📖</div>
+            <h2 className="text-3xl font-bold">Story Time</h2>
+          </div>
+          <Link
+            to="/stories"
+            className="block bg-bob-pink/30 p-8 rounded-[40px] border-4 border-transparent hover:border-bob-pink transition-all hover:-translate-y-1 shadow-md"
+          >
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="text-7xl">📚</div>
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-2xl font-bold mb-2">Bedtime stories in 3 languages</h3>
+                <p className="text-muted-foreground mb-3">
+                  Short tales for kids in English, Français and{" "}
+                  <span style={{ fontFamily: "var(--font-arabic)" }}>العربية</span>. Tap any line and Bob reads it aloud.
+                </p>
+                <span className="inline-block px-4 py-2 bg-white rounded-2xl font-bold border-2 border-border">
+                  Open story library →
+                </span>
+              </div>
+            </div>
+          </Link>
+        </section>
+
         {/* Mini games */}
         <section>
+
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 bg-bob-yellow rounded-lg grid place-items-center text-xl">
               🎮
