@@ -85,7 +85,7 @@ function StoryPage() {
             dir={isRtl ? "rtl" : "ltr"}
             style={isRtl ? { fontFamily: "var(--font-arabic)" } : undefined}
           >
-            {story.paragraphs[lang].map((p, i) => (
+            {story.paragraphs[lang].map((p: string, i: number) => (
               <p
                 key={i}
                 className="text-lg md:text-xl leading-relaxed cursor-pointer hover:bg-bob-yellow/40 rounded-xl px-3 py-2 transition"

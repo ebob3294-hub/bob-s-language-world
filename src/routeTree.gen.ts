@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as StoriesIndexRouteImport } from './routes/stories.index'
+import { Route as StoriesStoryIdRouteImport } from './routes/stories.$storyId'
 import { Route as PlayQuizRouteImport } from './routes/play.quiz'
 import { Route as PlayMatchingRouteImport } from './routes/play.matching'
 import { Route as PlayFlashcardsRouteImport } from './routes/play.flashcards'
@@ -24,6 +25,11 @@ const IndexRoute = IndexRouteImport.update({
 const StoriesIndexRoute = StoriesIndexRouteImport.update({
   id: '/stories/',
   path: '/stories/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoriesStoryIdRoute = StoriesStoryIdRouteImport.update({
+  id: '/stories/$storyId',
+  path: '/stories/$storyId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlayQuizRoute = PlayQuizRouteImport.update({
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/play/flashcards': typeof PlayFlashcardsRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
+  '/stories/$storyId': typeof StoriesStoryIdRoute
   '/stories/': typeof StoriesIndexRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/play/flashcards': typeof PlayFlashcardsRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
+  '/stories/$storyId': typeof StoriesStoryIdRoute
   '/stories': typeof StoriesIndexRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/play/flashcards': typeof PlayFlashcardsRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
+  '/stories/$storyId': typeof StoriesStoryIdRoute
   '/stories/': typeof StoriesIndexRoute
 }
 export interface FileRouteTypes {
@@ -80,6 +89,7 @@ export interface FileRouteTypes {
     | '/play/flashcards'
     | '/play/matching'
     | '/play/quiz'
+    | '/stories/$storyId'
     | '/stories/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -88,6 +98,7 @@ export interface FileRouteTypes {
     | '/play/flashcards'
     | '/play/matching'
     | '/play/quiz'
+    | '/stories/$storyId'
     | '/stories'
   id:
     | '__root__'
@@ -96,6 +107,7 @@ export interface FileRouteTypes {
     | '/play/flashcards'
     | '/play/matching'
     | '/play/quiz'
+    | '/stories/$storyId'
     | '/stories/'
   fileRoutesById: FileRoutesById
 }
@@ -105,6 +117,7 @@ export interface RootRouteChildren {
   PlayFlashcardsRoute: typeof PlayFlashcardsRoute
   PlayMatchingRoute: typeof PlayMatchingRoute
   PlayQuizRoute: typeof PlayQuizRoute
+  StoriesStoryIdRoute: typeof StoriesStoryIdRoute
   StoriesIndexRoute: typeof StoriesIndexRoute
 }
 
@@ -122,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/stories'
       fullPath: '/stories/'
       preLoaderRoute: typeof StoriesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stories/$storyId': {
+      id: '/stories/$storyId'
+      path: '/stories/$storyId'
+      fullPath: '/stories/$storyId'
+      preLoaderRoute: typeof StoriesStoryIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/play/quiz': {
@@ -161,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlayFlashcardsRoute: PlayFlashcardsRoute,
   PlayMatchingRoute: PlayMatchingRoute,
   PlayQuizRoute: PlayQuizRoute,
+  StoriesStoryIdRoute: StoriesStoryIdRoute,
   StoriesIndexRoute: StoriesIndexRoute,
 }
 export const routeTree = rootRouteImport
