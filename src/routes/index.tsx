@@ -165,7 +165,7 @@ function Home() {
             <h2 className="text-3xl font-bold">Mini Games</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Link
               to="/play/flashcards"
               className="bg-bob-blue p-8 rounded-[40px] text-white group cursor-pointer hover:-translate-y-1 transition-transform shadow-md"
