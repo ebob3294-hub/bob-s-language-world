@@ -202,6 +202,18 @@ function Home() {
                 ⭐
               </div>
             </Link>
+            <Link
+              to="/play/spelling"
+              className="bg-parent-purple p-8 rounded-[40px] text-white group cursor-pointer hover:-translate-y-1 transition-transform shadow-md"
+            >
+              <h5 className="text-2xl font-bold mb-2">Spelling</h5>
+              <p className="text-white/90 mb-6">
+                Hear the word, then type it correctly.
+              </p>
+              <div className="w-full h-32 bg-white/20 rounded-2xl flex items-center justify-center text-5xl">
+                🔤
+              </div>
+            </Link>
           </div>
         </section>
       </main>
