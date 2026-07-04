@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CATEGORIES } from "@/lib/vocab";
+import { AGE_GROUPS } from "@/lib/ageGroups";
 import { BobHeader } from "@/components/BobHeader";
 import bobMascot from "@/assets/bob-mascot.png";
 
@@ -49,6 +50,46 @@ function Home() {
             >
               اختر فئة لتبدأ مغامرتك مع بوب
             </p>
+          </div>
+        </section>
+
+        {/* Age groups — new */}
+        <section className="mb-20">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 bg-parent-purple/20 rounded-lg grid place-items-center text-xl">🎯</div>
+            <div>
+              <h2 className="text-3xl font-bold">Learn by age</h2>
+              <p className="text-sm text-muted-foreground" dir="rtl" style={{ fontFamily: "var(--font-arabic)" }}>
+                اختر الفئة العمرية المناسبة لطفلك
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {AGE_GROUPS.map((g) => {
+              const bg = g.color === "yellow" ? "bg-bob-yellow" : g.color === "green" ? "bg-bob-green/20" : "bg-parent-purple/15";
+              const border = g.color === "yellow" ? "hover:border-bob-orange" : g.color === "green" ? "hover:border-bob-green" : "hover:border-parent-purple";
+              return (
+                <Link
+                  key={g.id}
+                  to="/ages/$ageId"
+                  params={{ ageId: g.id }}
+                  className={`${bg} rounded-[32px] p-6 border-4 border-transparent ${border} transition-all hover:-translate-y-1 shadow-sm`}
+                >
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-16 h-16 bg-white rounded-2xl grid place-items-center text-4xl shadow-sm">{g.emoji}</div>
+                    <div>
+                      <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Ages {g.range}</p>
+                      <h3 className="text-xl font-bold">{g.name.en}</h3>
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground/80">{g.tagline.en}</p>
+                  <div className="mt-4 flex items-center justify-between text-sm">
+                    <span className="font-semibold text-foreground/70">{g.lessons.length} lessons · {g.categoryIds.length} categories</span>
+                    <span className="font-bold">→</span>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </section>
 
@@ -124,7 +165,7 @@ function Home() {
             <h2 className="text-3xl font-bold">Mini Games</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Link
               to="/play/flashcards"
               className="bg-bob-blue p-8 rounded-[40px] text-white group cursor-pointer hover:-translate-y-1 transition-transform shadow-md"
@@ -159,6 +200,18 @@ function Home() {
               </p>
               <div className="w-full h-32 bg-white/20 rounded-2xl flex items-center justify-center text-5xl">
                 ⭐
+              </div>
+            </Link>
+            <Link
+              to="/play/spelling"
+              className="bg-parent-purple p-8 rounded-[40px] text-white group cursor-pointer hover:-translate-y-1 transition-transform shadow-md"
+            >
+              <h5 className="text-2xl font-bold mb-2">Spelling</h5>
+              <p className="text-white/90 mb-6">
+                Hear the word, then type it correctly.
+              </p>
+              <div className="w-full h-32 bg-white/20 rounded-2xl flex items-center justify-center text-5xl">
+                🔤
               </div>
             </Link>
           </div>

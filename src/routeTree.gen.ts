@@ -12,10 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as StoriesIndexRouteImport } from './routes/stories.index'
 import { Route as StoriesStoryIdRouteImport } from './routes/stories.$storyId'
+import { Route as PlaySpellingRouteImport } from './routes/play.spelling'
 import { Route as PlayQuizRouteImport } from './routes/play.quiz'
 import { Route as PlayMatchingRouteImport } from './routes/play.matching'
 import { Route as PlayFlashcardsRouteImport } from './routes/play.flashcards'
 import { Route as CategoryCategoryIdRouteImport } from './routes/category.$categoryId'
+import { Route as AgesAgeIdRouteImport } from './routes/ages.$ageId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -30,6 +32,11 @@ const StoriesIndexRoute = StoriesIndexRouteImport.update({
 const StoriesStoryIdRoute = StoriesStoryIdRouteImport.update({
   id: '/stories/$storyId',
   path: '/stories/$storyId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlaySpellingRoute = PlaySpellingRouteImport.update({
+  id: '/play/spelling',
+  path: '/play/spelling',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlayQuizRoute = PlayQuizRouteImport.update({
@@ -52,32 +59,43 @@ const CategoryCategoryIdRoute = CategoryCategoryIdRouteImport.update({
   path: '/category/$categoryId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgesAgeIdRoute = AgesAgeIdRouteImport.update({
+  id: '/ages/$ageId',
+  path: '/ages/$ageId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
+  '/play/spelling': typeof PlaySpellingRoute
   '/stories/$storyId': typeof StoriesStoryIdRoute
   '/stories/': typeof StoriesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
+  '/play/spelling': typeof PlaySpellingRoute
   '/stories/$storyId': typeof StoriesStoryIdRoute
   '/stories': typeof StoriesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
+  '/play/spelling': typeof PlaySpellingRoute
   '/stories/$storyId': typeof StoriesStoryIdRoute
   '/stories/': typeof StoriesIndexRoute
 }
@@ -85,38 +103,46 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/ages/$ageId'
     | '/category/$categoryId'
     | '/play/flashcards'
     | '/play/matching'
     | '/play/quiz'
+    | '/play/spelling'
     | '/stories/$storyId'
     | '/stories/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/ages/$ageId'
     | '/category/$categoryId'
     | '/play/flashcards'
     | '/play/matching'
     | '/play/quiz'
+    | '/play/spelling'
     | '/stories/$storyId'
     | '/stories'
   id:
     | '__root__'
     | '/'
+    | '/ages/$ageId'
     | '/category/$categoryId'
     | '/play/flashcards'
     | '/play/matching'
     | '/play/quiz'
+    | '/play/spelling'
     | '/stories/$storyId'
     | '/stories/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgesAgeIdRoute: typeof AgesAgeIdRoute
   CategoryCategoryIdRoute: typeof CategoryCategoryIdRoute
   PlayFlashcardsRoute: typeof PlayFlashcardsRoute
   PlayMatchingRoute: typeof PlayMatchingRoute
   PlayQuizRoute: typeof PlayQuizRoute
+  PlaySpellingRoute: typeof PlaySpellingRoute
   StoriesStoryIdRoute: typeof StoriesStoryIdRoute
   StoriesIndexRoute: typeof StoriesIndexRoute
 }
@@ -142,6 +168,13 @@ declare module '@tanstack/react-router' {
       path: '/stories/$storyId'
       fullPath: '/stories/$storyId'
       preLoaderRoute: typeof StoriesStoryIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/spelling': {
+      id: '/play/spelling'
+      path: '/play/spelling'
+      fullPath: '/play/spelling'
+      preLoaderRoute: typeof PlaySpellingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/play/quiz': {
@@ -172,15 +205,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CategoryCategoryIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ages/$ageId': {
+      id: '/ages/$ageId'
+      path: '/ages/$ageId'
+      fullPath: '/ages/$ageId'
+      preLoaderRoute: typeof AgesAgeIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgesAgeIdRoute: AgesAgeIdRoute,
   CategoryCategoryIdRoute: CategoryCategoryIdRoute,
   PlayFlashcardsRoute: PlayFlashcardsRoute,
   PlayMatchingRoute: PlayMatchingRoute,
   PlayQuizRoute: PlayQuizRoute,
+  PlaySpellingRoute: PlaySpellingRoute,
   StoriesStoryIdRoute: StoriesStoryIdRoute,
   StoriesIndexRoute: StoriesIndexRoute,
 }
