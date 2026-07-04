@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CATEGORIES } from "@/lib/vocab";
+import { AGE_GROUPS } from "@/lib/ageGroups";
 import { BobHeader } from "@/components/BobHeader";
+import bobMascot from "@/assets/bob-mascot.png";
 import bobMascot from "@/assets/bob-mascot.png";
 
 export const Route = createFileRoute("/")({
