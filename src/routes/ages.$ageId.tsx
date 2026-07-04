@@ -62,7 +62,7 @@ function AgePage() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold mb-6">📚 Lesson plan</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {group.lessons.map((lesson, i) => {
+            {group.lessons.map((lesson: typeof group.lessons[number], i: number) => {
               const cat = getCategory(lesson.categoryId);
               const target =
                 lesson.activity === "flashcards" ? "/play/flashcards"
