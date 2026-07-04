@@ -1,9 +1,16 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useState } from "react";
+import { z } from "zod";
+import { fallback, zodValidator } from "@tanstack/zod-adapter";
 import { getStory, speakStory, type StoryLang, STORY_LANG_LABEL } from "@/lib/stories";
 import { BobHeader } from "@/components/BobHeader";
 
+const searchSchema = z.object({
+  lang: fallback(z.enum(["en", "fr", "ar"]), "en").default("en"),
+});
+
 export const Route = createFileRoute("/stories/$storyId")({
+  validateSearch: zodValidator(searchSchema),
   loader: ({ params }) => {
     const story = getStory(params.storyId);
     if (!story) throw notFound();
@@ -41,7 +48,8 @@ const LANGS: StoryLang[] = ["en", "fr", "ar"];
 
 function StoryPage() {
   const { story } = Route.useLoaderData();
-  const [lang, setLang] = useState<StoryLang>("en");
+  const { lang: initialLang } = Route.useSearch();
+  const [lang, setLang] = useState<StoryLang>(initialLang);
   const isRtl = lang === "ar";
 
   return (
