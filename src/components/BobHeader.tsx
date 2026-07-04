@@ -18,10 +18,16 @@ export function BobHeader() {
           Learn with Bob
         </span>
       </Link>
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2">
+        <Link
+          to="/about"
+          className="text-bob-blue font-bold px-3 py-2 rounded-xl bg-bob-blue/10 hover:bg-bob-blue/20 transition-colors text-sm"
+        >
+          ℹ️ عن التطبيق
+        </Link>
         <Link
           to="/"
-          className="text-parent-purple font-bold px-4 py-2 rounded-xl bg-parent-purple/10 hover:bg-parent-purple/20 transition-colors text-sm"
+          className="text-parent-purple font-bold px-3 py-2 rounded-xl bg-parent-purple/10 hover:bg-parent-purple/20 transition-colors text-sm"
         >
           الرئيسية
         </Link>
