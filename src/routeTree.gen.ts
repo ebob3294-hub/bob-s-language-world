@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as StoriesIndexRouteImport } from './routes/stories.index'
 import { Route as StoriesStoryIdRouteImport } from './routes/stories.$storyId'
@@ -19,6 +20,11 @@ import { Route as PlayFlashcardsRouteImport } from './routes/play.flashcards'
 import { Route as CategoryCategoryIdRouteImport } from './routes/category.$categoryId'
 import { Route as AgesAgeIdRouteImport } from './routes/ages.$ageId'
 
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -67,6 +73,7 @@ const AgesAgeIdRoute = AgesAgeIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
@@ -90,6 +98,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
@@ -103,6 +112,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/ages/$ageId'
     | '/category/$categoryId'
     | '/play/flashcards'
@@ -114,6 +124,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/ages/$ageId'
     | '/category/$categoryId'
     | '/play/flashcards'
@@ -125,6 +136,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/ages/$ageId'
     | '/category/$categoryId'
     | '/play/flashcards'
@@ -137,6 +149,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AgesAgeIdRoute: typeof AgesAgeIdRoute
   CategoryCategoryIdRoute: typeof CategoryCategoryIdRoute
   PlayFlashcardsRoute: typeof PlayFlashcardsRoute
@@ -149,6 +162,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -217,6 +237,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AgesAgeIdRoute: AgesAgeIdRoute,
   CategoryCategoryIdRoute: CategoryCategoryIdRoute,
   PlayFlashcardsRoute: PlayFlashcardsRoute,
