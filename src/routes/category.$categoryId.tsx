@@ -54,40 +54,42 @@ function CategoryPage() {
                 </p>
               </div>
             </div>
-            <div className="flex gap-2 self-start">
+            <div className="flex gap-2 self-start flex-wrap">
               <button
                 onClick={() => setLang("en")}
-                className={`px-6 py-3 rounded-full font-bold transition-colors ${
-                  lang === "en"
-                    ? "bg-bob-blue text-white shadow-md"
-                    : "bg-muted hover:bg-muted/70"
+                className={`px-5 py-3 rounded-full font-bold transition-colors ${
+                  lang === "en" ? "bg-bob-blue text-white shadow-md" : "bg-muted hover:bg-muted/70"
                 }`}
               >
                 English
               </button>
               <button
                 onClick={() => setLang("fr")}
-                className={`px-6 py-3 rounded-full font-bold transition-colors ${
-                  lang === "fr"
-                    ? "bg-bob-orange text-white shadow-md"
-                    : "bg-muted hover:bg-muted/70"
+                className={`px-5 py-3 rounded-full font-bold transition-colors ${
+                  lang === "fr" ? "bg-bob-orange text-white shadow-md" : "bg-muted hover:bg-muted/70"
                 }`}
               >
                 Français
+              </button>
+              <button
+                onClick={() => setLang("ar")}
+                className={`px-5 py-3 rounded-full font-bold transition-colors ${
+                  lang === "ar" ? "bg-bob-green text-white shadow-md" : "bg-muted hover:bg-muted/70"
+                }`}
+                style={{ fontFamily: "var(--font-arabic)" }}
+              >
+                العربية
               </button>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {category.items.map((item: (typeof category.items)[number]) => {
-              const primary = lang === "en" ? item.en : item.fr;
-              const secondary = lang === "en" ? item.fr : item.en;
-              const primaryLabel = lang === "en" ? "English" : "Français";
-              const secondaryLabel = lang === "en" ? "Français" : "English";
-              const primaryAccent =
-                lang === "en" ? "text-bob-blue" : "text-bob-orange";
-              const secondaryAccent =
-                lang === "en" ? "text-parent-purple" : "text-bob-blue";
+              const en = item.en;
+              const fr = item.fr;
+              const ar = item.ar ?? item.en;
+              const primary = lang === "en" ? en : lang === "fr" ? fr : ar;
+              const isRtl = lang === "ar";
 
               const handleSpeak = () => {
                 speak(stripArticle(primary), lang);
@@ -104,12 +106,14 @@ function CategoryPage() {
                   </div>
                   <div className="flex justify-between items-center">
                     <div className="min-w-0">
-                      <p
-                        className={`${primaryAccent} font-bold text-xs uppercase tracking-widest mb-1`}
-                      >
-                        {primaryLabel}
+                      <p className="text-bob-blue font-bold text-xs uppercase tracking-widest mb-1">
+                        {lang === "en" ? "English" : lang === "fr" ? "Français" : "العربية"}
                       </p>
-                      <h4 className="text-2xl font-bold text-foreground truncate">
+                      <h4
+                        className="text-2xl font-bold text-foreground truncate"
+                        dir={isRtl ? "rtl" : "ltr"}
+                        style={isRtl ? { fontFamily: "var(--font-arabic)" } : undefined}
+                      >
                         {primary}
                       </h4>
                     </div>
@@ -121,15 +125,29 @@ function CategoryPage() {
                       🔊
                     </span>
                   </div>
-                  <div className="mt-4 pt-4 border-t border-border">
-                    <p
-                      className={`${secondaryAccent} font-bold text-xs uppercase tracking-widest mb-1`}
-                    >
-                      {secondaryLabel}
-                    </p>
-                    <h4 className="text-lg font-semibold text-muted-foreground italic truncate">
-                      {secondary}
-                    </h4>
+                  <div className="mt-4 pt-4 border-t border-border space-y-1">
+                    {lang !== "en" && (
+                      <p className="text-sm text-muted-foreground italic truncate">
+                        <span className="text-parent-purple font-bold text-xs uppercase mr-2">EN</span>
+                        {en}
+                      </p>
+                    )}
+                    {lang !== "fr" && (
+                      <p className="text-sm text-muted-foreground italic truncate">
+                        <span className="text-bob-orange font-bold text-xs uppercase mr-2">FR</span>
+                        {fr}
+                      </p>
+                    )}
+                    {lang !== "ar" && item.ar && (
+                      <p
+                        className="text-sm text-muted-foreground italic truncate"
+                        dir="rtl"
+                        style={{ fontFamily: "var(--font-arabic)" }}
+                      >
+                        <span className="text-bob-green font-bold text-xs uppercase ml-2">AR</span>
+                        {item.ar}
+                      </p>
+                    )}
                   </div>
                 </button>
               );
@@ -140,3 +158,4 @@ function CategoryPage() {
     </div>
   );
 }
+
