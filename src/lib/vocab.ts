@@ -1,22 +1,24 @@
 // Vocabulary data for Learn with Bob.
 // Emojis act as illustrations so every noun type is supported.
 
-export type Lang = "en" | "fr";
+export type Lang = "en" | "fr" | "ar";
 
 export interface VocabItem {
   id: string;
   emoji: string;
   en: string;
   fr: string;
+  ar?: string;
 }
 
 export interface Category {
   id: string;
   emoji: string;
   color: "blue" | "green" | "orange" | "yellow" | "pink" | "purple";
-  name: { en: string; fr: string };
+  name: { en: string; fr: string; ar?: string };
   items: VocabItem[];
 }
+
 
 export const CATEGORIES: Category[] = [
   {
@@ -205,23 +207,24 @@ export const CATEGORIES: Category[] = [
     id: "numbers",
     emoji: "🔢",
     color: "yellow",
-    name: { en: "Numbers", fr: "Nombres" },
+    name: { en: "Numbers", fr: "Nombres", ar: "الأرقام" },
     items: [
-      { id: "1", emoji: "1️⃣", en: "One", fr: "Un" },
-      { id: "2", emoji: "2️⃣", en: "Two", fr: "Deux" },
-      { id: "3", emoji: "3️⃣", en: "Three", fr: "Trois" },
-      { id: "4", emoji: "4️⃣", en: "Four", fr: "Quatre" },
-      { id: "5", emoji: "5️⃣", en: "Five", fr: "Cinq" },
-      { id: "6", emoji: "6️⃣", en: "Six", fr: "Six" },
-      { id: "7", emoji: "7️⃣", en: "Seven", fr: "Sept" },
-      { id: "8", emoji: "8️⃣", en: "Eight", fr: "Huit" },
-      { id: "9", emoji: "9️⃣", en: "Nine", fr: "Neuf" },
-      { id: "10", emoji: "🔟", en: "Ten", fr: "Dix" },
-      { id: "20", emoji: "🔢", en: "Twenty", fr: "Vingt" },
-      { id: "50", emoji: "🔢", en: "Fifty", fr: "Cinquante" },
-      { id: "100", emoji: "💯", en: "Hundred", fr: "Cent" },
+      { id: "1", emoji: "1️⃣", en: "One", fr: "Un", ar: "واحد" },
+      { id: "2", emoji: "2️⃣", en: "Two", fr: "Deux", ar: "اثنان" },
+      { id: "3", emoji: "3️⃣", en: "Three", fr: "Trois", ar: "ثلاثة" },
+      { id: "4", emoji: "4️⃣", en: "Four", fr: "Quatre", ar: "أربعة" },
+      { id: "5", emoji: "5️⃣", en: "Five", fr: "Cinq", ar: "خمسة" },
+      { id: "6", emoji: "6️⃣", en: "Six", fr: "Six", ar: "ستة" },
+      { id: "7", emoji: "7️⃣", en: "Seven", fr: "Sept", ar: "سبعة" },
+      { id: "8", emoji: "8️⃣", en: "Eight", fr: "Huit", ar: "ثمانية" },
+      { id: "9", emoji: "9️⃣", en: "Nine", fr: "Neuf", ar: "تسعة" },
+      { id: "10", emoji: "🔟", en: "Ten", fr: "Dix", ar: "عشرة" },
+      { id: "20", emoji: "🔢", en: "Twenty", fr: "Vingt", ar: "عشرون" },
+      { id: "50", emoji: "🔢", en: "Fifty", fr: "Cinquante", ar: "خمسون" },
+      { id: "100", emoji: "💯", en: "Hundred", fr: "Cent", ar: "مئة" },
     ],
   },
+
   {
     id: "shapes",
     emoji: "🔺",
@@ -496,6 +499,70 @@ export const CATEGORIES: Category[] = [
   },
 ];
 
+// ============= Alphabets (English, French, Arabic) =============
+// Each item's `en`/`fr`/`ar` is set to the letter itself so games and TTS
+// still work. The emoji shows a decorative badge.
+
+function letter(id: string, ch: string, ar?: string): VocabItem {
+  return { id, emoji: `🔤`, en: ch, fr: ch, ar: ar ?? ch };
+}
+
+const EN_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((c) =>
+  letter(`en-${c}`, c),
+);
+
+const FR_LETTERS: VocabItem[] = [
+  ...EN_LETTERS.map((l) => ({ ...l, id: `fr-${l.en}` })),
+  { id: "fr-e-acute", emoji: "🔤", en: "É", fr: "É" },
+  { id: "fr-e-grave", emoji: "🔤", en: "È", fr: "È" },
+  { id: "fr-c-cedilla", emoji: "🔤", en: "Ç", fr: "Ç" },
+  { id: "fr-a-circ", emoji: "🔤", en: "Â", fr: "Â" },
+];
+
+const AR_LETTERS_RAW: Array<[string, string, string]> = [
+  ["alif", "ا", "Alif"], ["baa", "ب", "Baa"], ["taa", "ت", "Taa"],
+  ["thaa", "ث", "Thaa"], ["jeem", "ج", "Jeem"], ["haa", "ح", "Haa"],
+  ["khaa", "خ", "Khaa"], ["dal", "د", "Dal"], ["thal", "ذ", "Thal"],
+  ["raa", "ر", "Raa"], ["zay", "ز", "Zay"], ["seen", "س", "Seen"],
+  ["sheen", "ش", "Sheen"], ["sad", "ص", "Sad"], ["dad", "ض", "Dad"],
+  ["taa2", "ط", "Ttaa"], ["zaa", "ظ", "Zzaa"], ["ain", "ع", "Ayn"],
+  ["ghain", "غ", "Ghayn"], ["faa", "ف", "Faa"], ["qaf", "ق", "Qaf"],
+  ["kaf", "ك", "Kaf"], ["lam", "ل", "Lam"], ["meem", "م", "Meem"],
+  ["noon", "ن", "Noon"], ["haa2", "ه", "Haa"], ["waw", "و", "Waw"],
+  ["yaa", "ي", "Yaa"],
+];
+const AR_LETTERS: VocabItem[] = AR_LETTERS_RAW.map(([id, letter, name]) => ({
+  id: `ar-${id}`,
+  emoji: "🔤",
+  en: name,
+  fr: name,
+  ar: letter,
+}));
+
+CATEGORIES.push(
+  {
+    id: "letters_en",
+    emoji: "🔤",
+    color: "blue",
+    name: { en: "English Letters", fr: "Lettres anglaises", ar: "الحروف الإنجليزية" },
+    items: EN_LETTERS,
+  },
+  {
+    id: "letters_fr",
+    emoji: "🔠",
+    color: "purple",
+    name: { en: "French Letters", fr: "Lettres françaises", ar: "الحروف الفرنسية" },
+    items: FR_LETTERS,
+  },
+  {
+    id: "letters_ar",
+    emoji: "🕌",
+    color: "green",
+    name: { en: "Arabic Letters", fr: "Lettres arabes", ar: "الحروف العربية" },
+    items: AR_LETTERS,
+  },
+);
+
 export const CATEGORY_MAP = Object.fromEntries(
   CATEGORIES.map((c) => [c.id, c]),
 ) as Record<string, Category>;
@@ -509,7 +576,7 @@ export function speak(text: string, lang: Lang) {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
   try {
     const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = lang === "en" ? "en-US" : "fr-FR";
+    utter.lang = lang === "en" ? "en-US" : lang === "fr" ? "fr-FR" : "ar-SA";
     utter.rate = 0.85;
     utter.pitch = 1.1;
     window.speechSynthesis.cancel();
@@ -523,3 +590,4 @@ export function speak(text: string, lang: Lang) {
 export function stripArticle(text: string): string {
   return text.replace(/^(Le |La |L'|Les )/i, "");
 }
+

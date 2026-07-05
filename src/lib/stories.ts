@@ -643,7 +643,238 @@ export const STORIES: Story[] = [
       ar: "لا تبنِ قصورًا على الرمال.",
     },
   },
+  // ==================== More LITTLE (3–5) ====================
+  {
+    id: "sleepy-moon",
+    emoji: "🌙",
+    color: "purple",
+    ageLevel: "little",
+    title: { en: "The Sleepy Moon", fr: "La Lune Endormie", ar: "القمر النعسان" },
+    paragraphs: {
+      en: [
+        "The moon was very sleepy. She yawned in the dark sky.",
+        "The little stars sang a soft song: 'Sleep well, dear moon.'",
+        "The moon smiled and closed her eyes. The sun came up to say good morning.",
+      ],
+      fr: [
+        "La lune avait très sommeil. Elle bâilla dans le ciel sombre.",
+        "Les petites étoiles chantèrent doucement : « Dors bien, chère lune. »",
+        "La lune sourit et ferma les yeux. Le soleil se leva pour dire bonjour.",
+      ],
+      ar: [
+        "كان القمر نعسانًا جدًا. تثاءب في السماء المظلمة.",
+        "غنّت النجوم الصغيرة بلطف: «نم جيدًا يا قمرنا الحبيب.»",
+        "ابتسم القمر وأغمض عينيه. وأشرقت الشمس لتقول صباح الخير.",
+      ],
+    },
+    moral: { en: "Everyone needs rest.", fr: "Tout le monde a besoin de repos.", ar: "الجميع بحاجة إلى الراحة." },
+  },
+  {
+    id: "puppy-friend",
+    emoji: "🐶",
+    color: "orange",
+    ageLevel: "little",
+    title: { en: "Puppy's New Friend", fr: "Le Nouvel Ami du Chiot", ar: "صديق الجرو الجديد" },
+    paragraphs: {
+      en: [
+        "A small puppy played alone in the park.",
+        "A little girl came and gave him a red ball.",
+        "They played all day. The puppy had a new best friend!",
+      ],
+      fr: [
+        "Un petit chiot jouait tout seul dans le parc.",
+        "Une petite fille arriva et lui donna une balle rouge.",
+        "Ils jouèrent toute la journée. Le chiot avait un nouveau meilleur ami !",
+      ],
+      ar: [
+        "كان جروٌ صغير يلعب وحده في الحديقة.",
+        "جاءت فتاةٌ صغيرة وأعطته كرة حمراء.",
+        "لعبا طوال اليوم. صار للجرو صديقٌ جديد!",
+      ],
+    },
+    moral: { en: "Sharing makes friends.", fr: "Partager, c'est se faire des amis.", ar: "المشاركة تصنع الأصدقاء." },
+  },
+  {
+    id: "apple-tree",
+    emoji: "🍎",
+    color: "green",
+    ageLevel: "little",
+    title: { en: "The Little Apple Tree", fr: "Le Petit Pommier", ar: "شجرة التفاح الصغيرة" },
+    paragraphs: {
+      en: [
+        "A little apple tree grew in a sunny garden.",
+        "Sun, rain and love helped it grow tall and strong.",
+        "One day it gave sweet red apples to every child in the village.",
+      ],
+      fr: [
+        "Un petit pommier poussait dans un jardin ensoleillé.",
+        "Le soleil, la pluie et l'amour l'aidèrent à grandir.",
+        "Un jour, il offrit de belles pommes rouges à tous les enfants du village.",
+      ],
+      ar: [
+        "نمت شجرة تفاح صغيرة في حديقة مشمسة.",
+        "ساعدتها الشمس والمطر والحب على أن تكبر قوية.",
+        "وفي يوم، أعطت تفاحًا أحمر لذيذًا لكل أطفال القرية.",
+      ],
+    },
+    moral: { en: "Kindness bears sweet fruit.", fr: "La bonté donne de beaux fruits.", ar: "الطيبة تُثمر أجمل الثمار." },
+  },
+
+  // ==================== More KIDS (5–9) ====================
+  {
+    id: "honest-woodcutter",
+    emoji: "🪓",
+    color: "green",
+    ageLevel: "kids",
+    title: { en: "The Honest Woodcutter", fr: "Le Bûcheron Honnête", ar: "الحطاب الصادق" },
+    paragraphs: {
+      en: [
+        "A poor woodcutter dropped his axe into a deep river. He cried.",
+        "A kind spirit brought a golden axe, then a silver one. 'These are not mine,' he said each time.",
+        "Finally the spirit showed his old iron axe. 'This one!' he smiled. The spirit gave him all three for his honesty.",
+      ],
+      fr: [
+        "Un pauvre bûcheron laissa tomber sa hache dans la rivière. Il pleura.",
+        "Un esprit bienveillant apporta une hache en or, puis en argent. « Ce n'est pas la mienne, » répondit-il.",
+        "Enfin, l'esprit montra sa vieille hache en fer. « Celle-ci ! » L'esprit lui offrit les trois pour son honnêteté.",
+      ],
+      ar: [
+        "أوقع حطابٌ فقير فأسه في نهر عميق فبكى.",
+        "جاء روحٌ طيب بفأس ذهبية ثم فضية. قال في كل مرة: «ليست لي.»",
+        "أخيرًا أظهر الروح فأسه الحديدية القديمة. ابتسم وقال: «هذه!» فأعطاه الروح الثلاثة جزاء صدقه.",
+      ],
+    },
+    moral: { en: "Honesty is always rewarded.", fr: "L'honnêteté est toujours récompensée.", ar: "الصدق دائمًا مكافأ." },
+  },
+  {
+    id: "goldilocks",
+    emoji: "🐻",
+    color: "orange",
+    ageLevel: "kids",
+    title: { en: "Goldilocks and the Three Bears", fr: "Boucles d'Or et les Trois Ours", ar: "الشعر الذهبي والدببة الثلاثة" },
+    paragraphs: {
+      en: [
+        "A girl named Goldilocks found a house in the forest. She tried three bowls of porridge — one was just right.",
+        "She tried three chairs and three beds. The smallest of each was just right, and she fell asleep.",
+        "The three bears came home! Goldilocks woke up, said sorry, and ran home. She learned not to enter without asking.",
+      ],
+      fr: [
+        "Une fille nommée Boucles d'Or trouva une maison dans la forêt. Elle goûta trois bols de porridge.",
+        "Elle essaya trois chaises et trois lits. Les plus petits étaient parfaits et elle s'endormit.",
+        "Les trois ours rentrèrent ! Boucles d'Or se réveilla, s'excusa et s'enfuit chez elle.",
+      ],
+      ar: [
+        "وجدت فتاة اسمها الشعر الذهبي بيتًا في الغابة. جرّبت ثلاث صحون من العصيدة.",
+        "جرّبت ثلاث كراسي وثلاث أسِرّة، فكان الأصغر مناسبًا لها فنامت.",
+        "عادت الدببة الثلاثة! استيقظت الفتاة واعتذرت وهربت إلى بيتها.",
+      ],
+    },
+    moral: { en: "Respect other people's homes.", fr: "Respecte la maison des autres.", ar: "احترم بيوت الآخرين." },
+  },
+  {
+    id: "clever-crow",
+    emoji: "🐦",
+    color: "blue",
+    ageLevel: "kids",
+    title: { en: "The Clever Crow", fr: "Le Corbeau Intelligent", ar: "الغراب الذكي" },
+    paragraphs: {
+      en: [
+        "A thirsty crow found a jug with a little water at the bottom. His beak could not reach it.",
+        "He thought hard, then dropped small stones into the jug one by one.",
+        "The water slowly rose to the top. The clever crow drank happily.",
+      ],
+      fr: [
+        "Un corbeau assoiffé trouva une cruche avec un peu d'eau au fond. Son bec ne pouvait pas l'atteindre.",
+        "Il réfléchit, puis laissa tomber de petits cailloux dans la cruche un à un.",
+        "L'eau monta jusqu'en haut. Le corbeau malin but avec joie.",
+      ],
+      ar: [
+        "وجد غرابٌ عطشان جرّة فيها قليل من الماء في القاع. لم يصل منقاره إليها.",
+        "فكّر، ثم بدأ يُلقي حصى صغيرة داخل الجرّة واحدة تلو الأخرى.",
+        "ارتفع الماء إلى الأعلى، فشرب الغراب الذكي بسعادة.",
+      ],
+    },
+    moral: { en: "Use your brain to solve problems.", fr: "Sers-toi de ta tête pour résoudre les problèmes.", ar: "استخدم عقلك لحل المشكلات." },
+  },
+
+  // ==================== More TWEENS (9–15) ====================
+  {
+    id: "golden-touch",
+    emoji: "👑",
+    color: "yellow",
+    ageLevel: "tweens",
+    title: { en: "King Midas and the Golden Touch", fr: "Le Roi Midas et le Toucher d'Or", ar: "الملك ميداس واللمسة الذهبية" },
+    paragraphs: {
+      en: [
+        "King Midas loved gold above all things. A spirit granted him one wish: everything he touched would turn to gold.",
+        "At first he was thrilled — flowers, chairs, even his food became gold. But when his daughter ran to hug him, she turned to a golden statue.",
+        "Crying, Midas begged for the gift to be taken back. He learned that love is worth more than any treasure.",
+      ],
+      fr: [
+        "Le roi Midas aimait l'or plus que tout. Un esprit lui offrit un vœu : tout ce qu'il toucherait deviendrait or.",
+        "D'abord ravi, il transforma fleurs, chaises et nourriture en or. Mais quand sa fille vint l'embrasser, elle devint une statue d'or.",
+        "En pleurs, Midas supplia qu'on lui retire ce don. Il comprit que l'amour vaut plus que tout trésor.",
+      ],
+      ar: [
+        "أحبّ الملك ميداس الذهب فوق كل شيء. منحه روحٌ أمنية واحدة: كل ما يلمسه يصير ذهبًا.",
+        "فرح في البداية، فتحوّلت الزهور والكراسي وحتى الطعام إلى ذهب. لكن حين احتضنته ابنته، تحوّلت إلى تمثال ذهبي.",
+        "بكى ميداس وتوسّل أن تُنزع منه هذه الهبة. تعلّم أن الحب أثمن من كل كنز.",
+      ],
+    },
+    moral: { en: "Love matters more than gold.", fr: "L'amour vaut plus que l'or.", ar: "الحب أغلى من الذهب." },
+  },
+  {
+    id: "icarus",
+    emoji: "🪶",
+    color: "blue",
+    ageLevel: "tweens",
+    title: { en: "Icarus and the Wax Wings", fr: "Icare et les Ailes de Cire", ar: "إيكاروس والأجنحة الشمعية" },
+    paragraphs: {
+      en: [
+        "Icarus and his father made wings of feathers and wax to escape an island. 'Don't fly too high,' his father warned.",
+        "Amazed by the sky, Icarus flew higher and higher, ignoring the warning.",
+        "The sun melted his wax wings. He fell into the sea, and the world remembered his lesson forever.",
+      ],
+      fr: [
+        "Icare et son père fabriquèrent des ailes de plumes et de cire pour s'échapper d'une île. « Ne vole pas trop haut, » avertit son père.",
+        "Émerveillé par le ciel, Icare monta de plus en plus haut, ignorant l'avertissement.",
+        "Le soleil fit fondre ses ailes. Il tomba dans la mer, et le monde retint la leçon pour toujours.",
+      ],
+      ar: [
+        "صنع إيكاروس ووالده أجنحة من الريش والشمع للهرب من الجزيرة. حذّره أبوه: «لا تطر عاليًا.»",
+        "أدهشته السماء، فطار أعلى وأعلى، متجاهلًا التحذير.",
+        "أذابت الشمس شمع أجنحته، فسقط في البحر، وبقيت العبرة إلى الأبد.",
+      ],
+    },
+    moral: { en: "Listen to wise advice.", fr: "Écoute les conseils sages.", ar: "أنصت لنصيحة الحكماء." },
+  },
+  {
+    id: "bamboo-flute",
+    emoji: "🎋",
+    color: "green",
+    ageLevel: "tweens",
+    title: { en: "The Bamboo Flute", fr: "La Flûte de Bambou", ar: "ناي الخيزران" },
+    paragraphs: {
+      en: [
+        "A shy boy loved music but never played in front of others. He carved a flute from a bamboo stem.",
+        "For years he practiced alone by the river, until one evening a traveler heard him and stopped.",
+        "The traveler cried at the beauty of the song. 'Share your gift,' he said. The boy grew into a great musician.",
+      ],
+      fr: [
+        "Un garçon timide aimait la musique mais ne jouait jamais devant les autres. Il tailla une flûte dans un bambou.",
+        "Pendant des années, il joua seul au bord de la rivière, jusqu'à ce qu'un voyageur l'entende un soir.",
+        "Le voyageur pleura devant la beauté du chant. « Partage ton don, » lui dit-il. Le garçon devint un grand musicien.",
+      ],
+      ar: [
+        "أحبّ فتى خجول الموسيقى، لكنه لم يعزف أمام أحد. صنع ناياً من قصبة خيزران.",
+        "تدرّب سنواتٍ وحده قرب النهر، حتى سمعه في مساءٍ ما مسافرٌ فتوقف.",
+        "بكى المسافر من جمال اللحن، وقال: «شارك موهبتك.» فصار الفتى موسيقيًا عظيمًا.",
+      ],
+    },
+    moral: { en: "A shared talent grows brighter.", fr: "Un talent partagé brille davantage.", ar: "الموهبة تُشرق حين تُشارَك." },
+  },
 ];
+
 
 export const STORY_MAP = Object.fromEntries(
   STORIES.map((s) => [s.id, s]),
