@@ -1,22 +1,24 @@
 // Vocabulary data for Learn with Bob.
 // Emojis act as illustrations so every noun type is supported.
 
-export type Lang = "en" | "fr";
+export type Lang = "en" | "fr" | "ar";
 
 export interface VocabItem {
   id: string;
   emoji: string;
   en: string;
   fr: string;
+  ar?: string;
 }
 
 export interface Category {
   id: string;
   emoji: string;
   color: "blue" | "green" | "orange" | "yellow" | "pink" | "purple";
-  name: { en: string; fr: string };
+  name: { en: string; fr: string; ar?: string };
   items: VocabItem[];
 }
+
 
 export const CATEGORIES: Category[] = [
   {
@@ -205,23 +207,24 @@ export const CATEGORIES: Category[] = [
     id: "numbers",
     emoji: "🔢",
     color: "yellow",
-    name: { en: "Numbers", fr: "Nombres" },
+    name: { en: "Numbers", fr: "Nombres", ar: "الأرقام" },
     items: [
-      { id: "1", emoji: "1️⃣", en: "One", fr: "Un" },
-      { id: "2", emoji: "2️⃣", en: "Two", fr: "Deux" },
-      { id: "3", emoji: "3️⃣", en: "Three", fr: "Trois" },
-      { id: "4", emoji: "4️⃣", en: "Four", fr: "Quatre" },
-      { id: "5", emoji: "5️⃣", en: "Five", fr: "Cinq" },
-      { id: "6", emoji: "6️⃣", en: "Six", fr: "Six" },
-      { id: "7", emoji: "7️⃣", en: "Seven", fr: "Sept" },
-      { id: "8", emoji: "8️⃣", en: "Eight", fr: "Huit" },
-      { id: "9", emoji: "9️⃣", en: "Nine", fr: "Neuf" },
-      { id: "10", emoji: "🔟", en: "Ten", fr: "Dix" },
-      { id: "20", emoji: "🔢", en: "Twenty", fr: "Vingt" },
-      { id: "50", emoji: "🔢", en: "Fifty", fr: "Cinquante" },
-      { id: "100", emoji: "💯", en: "Hundred", fr: "Cent" },
+      { id: "1", emoji: "1️⃣", en: "One", fr: "Un", ar: "واحد" },
+      { id: "2", emoji: "2️⃣", en: "Two", fr: "Deux", ar: "اثنان" },
+      { id: "3", emoji: "3️⃣", en: "Three", fr: "Trois", ar: "ثلاثة" },
+      { id: "4", emoji: "4️⃣", en: "Four", fr: "Quatre", ar: "أربعة" },
+      { id: "5", emoji: "5️⃣", en: "Five", fr: "Cinq", ar: "خمسة" },
+      { id: "6", emoji: "6️⃣", en: "Six", fr: "Six", ar: "ستة" },
+      { id: "7", emoji: "7️⃣", en: "Seven", fr: "Sept", ar: "سبعة" },
+      { id: "8", emoji: "8️⃣", en: "Eight", fr: "Huit", ar: "ثمانية" },
+      { id: "9", emoji: "9️⃣", en: "Nine", fr: "Neuf", ar: "تسعة" },
+      { id: "10", emoji: "🔟", en: "Ten", fr: "Dix", ar: "عشرة" },
+      { id: "20", emoji: "🔢", en: "Twenty", fr: "Vingt", ar: "عشرون" },
+      { id: "50", emoji: "🔢", en: "Fifty", fr: "Cinquante", ar: "خمسون" },
+      { id: "100", emoji: "💯", en: "Hundred", fr: "Cent", ar: "مئة" },
     ],
   },
+
   {
     id: "shapes",
     emoji: "🔺",
