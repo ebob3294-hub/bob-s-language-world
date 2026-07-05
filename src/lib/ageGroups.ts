@@ -36,8 +36,10 @@ export const AGE_GROUPS: AgeGroup[] = [
       fr: "Couleurs, formes, animaux — grandes images, sons doux.",
       ar: "ألوان وأشكال وحيوانات — صور كبيرة وأصوات لطيفة.",
     },
-    categoryIds: ["colors", "shapes", "numbers", "animals", "fruits", "family", "body", "food"],
+    categoryIds: ["letters_en", "letters_ar", "numbers", "colors", "shapes", "animals", "fruits", "family", "body", "food"],
     lessons: [
+      { id: "l0a", title: { en: "ABC letters", fr: "Lettres ABC", ar: "حروف ABC" }, categoryId: "letters_en", activity: "flashcards", goal: { en: "Learn A–Z", fr: "Apprendre A–Z", ar: "تعلّم الحروف من A إلى Z" } },
+      { id: "l0b", title: { en: "Arabic letters", fr: "Lettres arabes", ar: "الحروف العربية" }, categoryId: "letters_ar", activity: "flashcards", goal: { en: "Learn ا–ي", fr: "Apprendre ا–ي", ar: "تعلّم من ا إلى ي" } },
       { id: "l1", title: { en: "My first colors", fr: "Mes premières couleurs", ar: "ألواني الأولى" }, categoryId: "colors", activity: "flashcards", goal: { en: "Recognize 6 colors", fr: "Reconnaître 6 couleurs", ar: "تعرّف على 6 ألوان" } },
       { id: "l2", title: { en: "Count to 10", fr: "Compter jusqu'à 10", ar: "العدّ حتى 10" }, categoryId: "numbers", activity: "flashcards", goal: { en: "Say numbers 1–10", fr: "Dire les nombres 1–10", ar: "قل الأرقام من 1 إلى 10" } },
       { id: "l3", title: { en: "Farm animals", fr: "Animaux de la ferme", ar: "حيوانات المزرعة" }, categoryId: "animals", activity: "matching", goal: { en: "Match 6 animals", fr: "Associer 6 animaux", ar: "طابق 6 حيوانات" } },
@@ -46,6 +48,7 @@ export const AGE_GROUPS: AgeGroup[] = [
       { id: "l6", title: { en: "My body", fr: "Mon corps", ar: "جسمي" }, categoryId: "body", activity: "matching", goal: { en: "Point and say", fr: "Montre et dis", ar: "أشر وقُل" } },
     ],
   },
+
   {
     id: "kids",
     range: "5 – 9",
@@ -57,7 +60,7 @@ export const AGE_GROUPS: AgeGroup[] = [
       fr: "Vocabulaire quotidien, associations et petits quiz.",
       ar: "مفردات يومية وألعاب مطابقة واختبارات قصيرة.",
     },
-    categoryIds: ["animals", "clothes", "kitchen", "food", "vegetables", "school", "house", "weather", "vehicles", "feelings", "days"],
+    categoryIds: ["letters_en", "letters_fr", "letters_ar", "numbers", "animals", "clothes", "kitchen", "food", "vegetables", "school", "house", "weather", "vehicles", "feelings", "days"],
     lessons: [
       { id: "l1", title: { en: "At school", fr: "À l'école", ar: "في المدرسة" }, categoryId: "school", activity: "flashcards", goal: { en: "12 school words", fr: "12 mots d'école", ar: "12 كلمة مدرسية" } },
       { id: "l2", title: { en: "Around the house", fr: "Dans la maison", ar: "في المنزل" }, categoryId: "house", activity: "matching", goal: { en: "Match rooms & items", fr: "Associer pièces et objets", ar: "طابق الغرف والأدوات" } },
@@ -80,7 +83,7 @@ export const AGE_GROUPS: AgeGroup[] = [
       fr: "Sujets variés, exercices d'orthographe et lectures.",
       ar: "مواضيع أوسع وتدريبات إملاء وقراءة قصص.",
     },
-    categoryIds: ["school", "jobs", "sports", "music", "nature", "tech", "feelings", "weather", "days", "vehicles"],
+    categoryIds: ["letters_fr", "letters_ar", "school", "jobs", "sports", "music", "nature", "tech", "feelings", "weather", "days", "vehicles"],
     lessons: [
       { id: "l1", title: { en: "Jobs & careers", fr: "Métiers et carrières", ar: "الوظائف والمهن" }, categoryId: "jobs", activity: "flashcards", goal: { en: "Explore jobs", fr: "Découvrir les métiers", ar: "استكشف المهن" } },
       { id: "l2", title: { en: "Sports vocabulary", fr: "Vocabulaire du sport", ar: "مفردات الرياضة" }, categoryId: "sports", activity: "quiz", goal: { en: "10-question quiz", fr: "Quiz de 10 questions", ar: "اختبار من 10 أسئلة" } },
