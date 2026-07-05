@@ -499,6 +499,70 @@ export const CATEGORIES: Category[] = [
   },
 ];
 
+// ============= Alphabets (English, French, Arabic) =============
+// Each item's `en`/`fr`/`ar` is set to the letter itself so games and TTS
+// still work. The emoji shows a decorative badge.
+
+function letter(id: string, ch: string, ar?: string): VocabItem {
+  return { id, emoji: `🔤`, en: ch, fr: ch, ar: ar ?? ch };
+}
+
+const EN_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((c) =>
+  letter(`en-${c}`, c),
+);
+
+const FR_LETTERS: VocabItem[] = [
+  ...EN_LETTERS.map((l) => ({ ...l, id: `fr-${l.en}` })),
+  { id: "fr-e-acute", emoji: "🔤", en: "É", fr: "É" },
+  { id: "fr-e-grave", emoji: "🔤", en: "È", fr: "È" },
+  { id: "fr-c-cedilla", emoji: "🔤", en: "Ç", fr: "Ç" },
+  { id: "fr-a-circ", emoji: "🔤", en: "Â", fr: "Â" },
+];
+
+const AR_LETTERS_RAW: Array<[string, string, string]> = [
+  ["alif", "ا", "Alif"], ["baa", "ب", "Baa"], ["taa", "ت", "Taa"],
+  ["thaa", "ث", "Thaa"], ["jeem", "ج", "Jeem"], ["haa", "ح", "Haa"],
+  ["khaa", "خ", "Khaa"], ["dal", "د", "Dal"], ["thal", "ذ", "Thal"],
+  ["raa", "ر", "Raa"], ["zay", "ز", "Zay"], ["seen", "س", "Seen"],
+  ["sheen", "ش", "Sheen"], ["sad", "ص", "Sad"], ["dad", "ض", "Dad"],
+  ["taa2", "ط", "Ttaa"], ["zaa", "ظ", "Zzaa"], ["ain", "ع", "Ayn"],
+  ["ghain", "غ", "Ghayn"], ["faa", "ف", "Faa"], ["qaf", "ق", "Qaf"],
+  ["kaf", "ك", "Kaf"], ["lam", "ل", "Lam"], ["meem", "م", "Meem"],
+  ["noon", "ن", "Noon"], ["haa2", "ه", "Haa"], ["waw", "و", "Waw"],
+  ["yaa", "ي", "Yaa"],
+];
+const AR_LETTERS: VocabItem[] = AR_LETTERS_RAW.map(([id, letter, name]) => ({
+  id: `ar-${id}`,
+  emoji: "🔤",
+  en: name,
+  fr: name,
+  ar: letter,
+}));
+
+CATEGORIES.push(
+  {
+    id: "letters_en",
+    emoji: "🔤",
+    color: "blue",
+    name: { en: "English Letters", fr: "Lettres anglaises", ar: "الحروف الإنجليزية" },
+    items: EN_LETTERS,
+  },
+  {
+    id: "letters_fr",
+    emoji: "🔠",
+    color: "purple",
+    name: { en: "French Letters", fr: "Lettres françaises", ar: "الحروف الفرنسية" },
+    items: FR_LETTERS,
+  },
+  {
+    id: "letters_ar",
+    emoji: "🕌",
+    color: "green",
+    name: { en: "Arabic Letters", fr: "Lettres arabes", ar: "الحروف العربية" },
+    items: AR_LETTERS,
+  },
+);
+
 export const CATEGORY_MAP = Object.fromEntries(
   CATEGORIES.map((c) => [c.id, c]),
 ) as Record<string, Category>;
@@ -512,7 +576,7 @@ export function speak(text: string, lang: Lang) {
   if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
   try {
     const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = lang === "en" ? "en-US" : "fr-FR";
+    utter.lang = lang === "en" ? "en-US" : lang === "fr" ? "fr-FR" : "ar-SA";
     utter.rate = 0.85;
     utter.pitch = 1.1;
     window.speechSynthesis.cancel();
@@ -526,3 +590,4 @@ export function speak(text: string, lang: Lang) {
 export function stripArticle(text: string): string {
   return text.replace(/^(Le |La |L'|Les )/i, "");
 }
+
