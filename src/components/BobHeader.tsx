@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 
-export function ChamaHeader() {
+export function BobHeader() {
   return (
     <nav
       className="w-full py-4 px-6 flex justify-between items-center bg-white border-b-4 border-border sticky top-0 z-40"
@@ -8,7 +8,7 @@ export function ChamaHeader() {
     >
       <Link to="/" className="flex items-center gap-3">
         <div className="w-10 h-10 bg-bob-orange rounded-full flex items-center justify-center text-white font-bold text-xl shadow-sm">
-          B
+          C
         </div>
         <span
           className="text-2xl font-semibold tracking-tight text-bob-blue"
