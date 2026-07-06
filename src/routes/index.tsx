@@ -23,20 +23,20 @@ function Home() {
       <BobHeader />
 
       <main className="max-w-6xl mx-auto p-6 md:p-12">
-        {/* Bob greeting */}
+        {/* Chama greeting */}
         <section className="flex flex-col md:flex-row items-center gap-8 mb-16">
           <div className="relative shrink-0">
             <div className="w-48 h-48 md:w-64 md:h-64 bg-bob-yellow rounded-[40px] border-4 border-white shadow-xl grid place-items-center transform -rotate-3 hover:rotate-0 transition-transform overflow-hidden">
               <img
                 src={bobMascot}
-                alt="Bob the friendly mascot"
+                alt="Chama the friendly mascot"
                 width={512}
                 height={512}
                 className="w-full h-full object-contain p-2"
               />
             </div>
             <div className="absolute -top-4 -right-4 bg-white px-5 py-2.5 rounded-2xl shadow-lg border-2 border-border text-lg font-bold">
-              Hi! I'm Bob! 👋
+              Hi! I'm Chama! 👋
             </div>
           </div>
           <div className="text-center md:text-left">
