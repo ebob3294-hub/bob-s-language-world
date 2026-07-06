@@ -9,8 +9,8 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About — Learn with Bob" },
-      { name: "description", content: "About Learn with Bob — a joyful language app for kids in English, French and Arabic." },
+      { title: "About — Learn with Chama" },
+      { name: "description", content: "About Learn with Chama — a joyful language app for kids in English, French and Arabic." },
     ],
   }),
 });
@@ -27,7 +27,7 @@ function AboutPage() {
             <img src={bobMascot} alt="Bob mascot" className="w-full h-full object-contain p-2" />
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">Learn with Bob</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3">Learn with Chama</h1>
           <p className="text-lg text-muted-foreground mb-2">
             English · Français · <span style={{ fontFamily: "var(--font-arabic)" }}>العربية</span>
           </p>

@@ -15,7 +15,7 @@ export const Route = createFileRoute("/stories/")({
   component: StoriesIndex,
   head: () => ({
     meta: [
-      { title: "Stories — Learn with Bob" },
+      { title: "Stories — Learn with Chama" },
       { name: "description", content: "Short kids stories in English, French, and Arabic — by age group." },
     ],
   }),

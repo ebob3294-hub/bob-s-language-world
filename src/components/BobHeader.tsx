@@ -15,7 +15,7 @@ export function BobHeader() {
           style={{ fontFamily: "var(--font-display)" }}
           dir="ltr"
         >
-          Learn with Bob
+          Learn with Chama
         </span>
       </Link>
       <div className="flex items-center gap-2">

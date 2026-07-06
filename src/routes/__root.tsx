@@ -78,14 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Learn with Bob — English & French for Kids" },
+      { title: "Learn with Chama — English & French for Kids" },
       {
         name: "description",
         content:
           "A joyful language learning playground for kids 3-16. Discover animals, food, clothes and more in English and French with Bob the friendly mascot.",
       },
-      { name: "author", content: "Learn with Bob" },
-      { property: "og:title", content: "Learn with Bob — English & French for Kids" },
+      { name: "author", content: "Learn with Chama" },
+      { property: "og:title", content: "Learn with Chama — English & French for Kids" },
       {
         property: "og:description",
         content:

@@ -224,7 +224,7 @@ function Home() {
           dir="rtl"
           style={{ fontFamily: "var(--font-arabic)" }}
         >
-          من أجل مستقبل أطفالنا — Learn with Bob © 2026
+          من أجل مستقبل أطفالنا — Learn with Chama © 2026
         </p>
       </footer>
     </div>
