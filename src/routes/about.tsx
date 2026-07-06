@@ -24,7 +24,7 @@ function AboutPage() {
 
         <section className="mt-4 bg-card rounded-[40px] p-8 md:p-12 border border-border shadow-sm text-center">
           <div className="w-32 h-32 mx-auto mb-6 bg-bob-yellow rounded-[32px] border-4 border-white shadow-lg grid place-items-center overflow-hidden">
-            <img src={bobMascot} alt="Chama mascot" className="w-full h-full object-contain p-2" />
+            <img src={chamaMascot} alt="Chama mascot" className="w-full h-full object-contain p-2" />
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-3">Learn with Chama</h1>
