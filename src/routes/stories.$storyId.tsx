@@ -19,7 +19,7 @@ export const Route = createFileRoute("/stories/$storyId")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.story.title.en} — Learn with Bob` },
+          { title: `${loaderData.story.title.en} — Learn with Chama` },
           { name: "description", content: loaderData.story.moral.en },
         ]
       : [{ title: "Story not found" }],
@@ -98,7 +98,7 @@ function StoryPage() {
                 key={i}
                 className="text-lg md:text-xl leading-relaxed cursor-pointer hover:bg-bob-yellow/40 rounded-xl px-3 py-2 transition"
                 onClick={() => speakStory(p, lang)}
-                title="Tap to hear Bob read"
+                title="Tap to hear Chama read"
               >
                 {p}
               </p>

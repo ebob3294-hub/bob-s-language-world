@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CATEGORIES } from "@/lib/vocab";
 import { AGE_GROUPS } from "@/lib/ageGroups";
 import { BobHeader } from "@/components/BobHeader";
-import bobMascot from "@/assets/bob-mascot.png";
+import chamaMascot from "@/assets/chama-mascot.png";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -23,20 +23,20 @@ function Home() {
       <BobHeader />
 
       <main className="max-w-6xl mx-auto p-6 md:p-12">
-        {/* Bob greeting */}
+        {/* Chama greeting */}
         <section className="flex flex-col md:flex-row items-center gap-8 mb-16">
           <div className="relative shrink-0">
             <div className="w-48 h-48 md:w-64 md:h-64 bg-bob-yellow rounded-[40px] border-4 border-white shadow-xl grid place-items-center transform -rotate-3 hover:rotate-0 transition-transform overflow-hidden">
               <img
-                src={bobMascot}
-                alt="Bob the friendly mascot"
+                src={chamaMascot}
+                alt="Chama the friendly mascot"
                 width={512}
                 height={512}
                 className="w-full h-full object-contain p-2"
               />
             </div>
             <div className="absolute -top-4 -right-4 bg-white px-5 py-2.5 rounded-2xl shadow-lg border-2 border-border text-lg font-bold">
-              Hi! I'm Bob! 👋
+              Hi! I'm Chama! 👋
             </div>
           </div>
           <div className="text-center md:text-left">
@@ -48,7 +48,7 @@ function Home() {
               dir="rtl"
               style={{ fontFamily: "var(--font-arabic)" }}
             >
-              اختر فئة لتبدأ مغامرتك مع بوب
+              اختر فئة لتبدأ مغامرتك مع شامة
             </p>
           </div>
         </section>
@@ -145,7 +145,7 @@ function Home() {
                 <h3 className="text-2xl font-bold mb-2">Bedtime stories in 3 languages</h3>
                 <p className="text-muted-foreground mb-3">
                   Short tales for kids in English, Français and{" "}
-                  <span style={{ fontFamily: "var(--font-arabic)" }}>العربية</span>. Tap any line and Bob reads it aloud.
+                  <span style={{ fontFamily: "var(--font-arabic)" }}>العربية</span>. Tap any line and Chama reads it aloud.
                 </p>
                 <span className="inline-block px-4 py-2 bg-white rounded-2xl font-bold border-2 border-border">
                   Open story library →
@@ -224,7 +224,7 @@ function Home() {
           dir="rtl"
           style={{ fontFamily: "var(--font-arabic)" }}
         >
-          من أجل مستقبل أطفالنا — Learn with Bob © 2026
+          من أجل مستقبل أطفالنا — Learn with Chama © 2026
         </p>
       </footer>
     </div>

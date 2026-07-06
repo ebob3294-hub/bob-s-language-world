@@ -1,16 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BobHeader } from "@/components/BobHeader";
-import bobMascot from "@/assets/bob-mascot.png";
+import chamaMascot from "@/assets/chama-mascot.png";
 
 // TIP: change the developer name below whenever you want.
-const DEVELOPER_NAME = "Bob Team";
+const DEVELOPER_NAME = "Chama Team";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About — Learn with Bob" },
-      { name: "description", content: "About Learn with Bob — a joyful language app for kids in English, French and Arabic." },
+      { title: "About — Learn with Chama" },
+      { name: "description", content: "About Learn with Chama — a joyful language app for kids in English, French and Arabic." },
     ],
   }),
 });
@@ -24,16 +24,16 @@ function AboutPage() {
 
         <section className="mt-4 bg-card rounded-[40px] p-8 md:p-12 border border-border shadow-sm text-center">
           <div className="w-32 h-32 mx-auto mb-6 bg-bob-yellow rounded-[32px] border-4 border-white shadow-lg grid place-items-center overflow-hidden">
-            <img src={bobMascot} alt="Bob mascot" className="w-full h-full object-contain p-2" />
+            <img src={bobMascot} alt="Chama mascot" className="w-full h-full object-contain p-2" />
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">Learn with Bob</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3">Learn with Chama</h1>
           <p className="text-lg text-muted-foreground mb-2">
             English · Français · <span style={{ fontFamily: "var(--font-arabic)" }}>العربية</span>
           </p>
           <p className="text-lg text-foreground/80 max-w-xl mx-auto mt-4">
             A joyful playground where kids from 3 to 15 discover vocabulary and short stories in three languages.
-            Bob reads every word out loud, and mini-games make learning stick.
+            Chama reads every word out loud, and mini-games make learning stick.
           </p>
           <p
             className="text-lg text-foreground/80 max-w-xl mx-auto mt-3"

@@ -8,14 +8,14 @@ export function BobHeader() {
     >
       <Link to="/" className="flex items-center gap-3">
         <div className="w-10 h-10 bg-bob-orange rounded-full flex items-center justify-center text-white font-bold text-xl shadow-sm">
-          B
+          C
         </div>
         <span
           className="text-2xl font-semibold tracking-tight text-bob-blue"
           style={{ fontFamily: "var(--font-display)" }}
           dir="ltr"
         >
-          Learn with Bob
+          Learn with Chama
         </span>
       </Link>
       <div className="flex items-center gap-2">
