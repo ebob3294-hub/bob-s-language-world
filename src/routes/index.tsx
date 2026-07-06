@@ -48,7 +48,7 @@ function Home() {
               dir="rtl"
               style={{ fontFamily: "var(--font-arabic)" }}
             >
-              اختر فئة لتبدأ مغامرتك مع بوب
+              اختر فئة لتبدأ مغامرتك مع شامة
             </p>
           </div>
         </section>
@@ -145,7 +145,7 @@ function Home() {
                 <h3 className="text-2xl font-bold mb-2">Bedtime stories in 3 languages</h3>
                 <p className="text-muted-foreground mb-3">
                   Short tales for kids in English, Français and{" "}
-                  <span style={{ fontFamily: "var(--font-arabic)" }}>العربية</span>. Tap any line and Bob reads it aloud.
+                  <span style={{ fontFamily: "var(--font-arabic)" }}>العربية</span>. Tap any line and Chama reads it aloud.
                 </p>
                 <span className="inline-block px-4 py-2 bg-white rounded-2xl font-bold border-2 border-border">
                   Open story library →

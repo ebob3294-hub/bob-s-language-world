@@ -1,4 +1,4 @@
-// Vocabulary data for Learn with Bob.
+// Vocabulary data for Learn with Chama.
 // Emojis act as illustrations so every noun type is supported.
 
 export type Lang = "en" | "fr" | "ar";

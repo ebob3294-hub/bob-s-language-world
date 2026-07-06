@@ -52,7 +52,7 @@ function StoriesIndex() {
           <div className="inline-block bg-bob-yellow rounded-3xl px-6 py-3 border-4 border-white shadow-lg mb-4 -rotate-1">
             <span className="text-2xl">📖</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-3">Story Time with Bob</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-3">Story Time with Chama</h1>
           <p className="text-lg text-muted-foreground">
             English · Français · <span style={{ fontFamily: "var(--font-arabic)" }}>العربية</span>
           </p>
