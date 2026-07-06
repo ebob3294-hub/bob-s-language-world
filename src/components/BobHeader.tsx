@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 
 export function BobHeader() {
-  const [isBob, setIsBob] = useState(false);
+  const [isBob, setIsBob] = useState(true);
 
   return (
     <nav
