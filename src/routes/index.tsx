@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CATEGORIES } from "@/lib/vocab";
 import { AGE_GROUPS } from "@/lib/ageGroups";
 import { BobHeader } from "@/components/BobHeader";
-import bobMascot from "@/assets/bob-mascot.png";
+import chamaMascot from "@/assets/chama-mascot.png";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -28,7 +28,7 @@ function Home() {
           <div className="relative shrink-0">
             <div className="w-48 h-48 md:w-64 md:h-64 bg-bob-yellow rounded-[40px] border-4 border-white shadow-xl grid place-items-center transform -rotate-3 hover:rotate-0 transition-transform overflow-hidden">
               <img
-                src={bobMascot}
+                src={chamaMascot}
                 alt="Chama the friendly mascot"
                 width={512}
                 height={512}
