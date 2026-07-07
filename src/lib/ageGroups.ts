@@ -82,6 +82,10 @@ export const AGE_GROUPS: AgeGroup[] = [
       { id: "l11", title: { en: "Spell house items", fr: "Épeler la maison", ar: "تهجّة أدوات المنزل" }, categoryId: "house", activity: "spelling", goal: { en: "Spell 6 items", fr: "Épeler 6 objets", ar: "تهجّة 6 أدوات" } },
       { id: "l12", title: { en: "French letters", fr: "Lettres françaises", ar: "الحروف الفرنسية" }, categoryId: "letters_fr", activity: "flashcards", goal: { en: "Learn A–Z (FR)", fr: "Apprendre A–Z", ar: "تعلّم الحروف الفرنسية" } },
       { id: "l13", title: { en: "Numbers spelling", fr: "Épeler les nombres", ar: "تهجّة الأرقام" }, categoryId: "numbers", activity: "spelling", goal: { en: "Spell 10 numbers", fr: "Épeler 10 nombres", ar: "تهجّة 10 أرقام" } },
+      { id: "l14", title: { en: "Dialogue: at the market", fr: "Dialogue: au marché", ar: "محاورة: في السوق" }, categoryId: "food", activity: "dialogue", goal: { en: "Buy things politely", fr: "Acheter poliment", ar: "اشترِ بلباقة" } },
+      { id: "l15", title: { en: "Dialogue: at school", fr: "Dialogue: à l'école", ar: "محاورة: في المدرسة" }, categoryId: "school", activity: "dialogue", goal: { en: "Talk about classes", fr: "Parler des cours", ar: "تحدث عن الحصص" } },
+      { id: "l16", title: { en: "Grammar: verb to be", fr: "Grammaire: être", ar: "قواعد: أفعال الكينونة" }, categoryId: "letters_en", activity: "grammar", goal: { en: "Master to be", fr: "Maîtriser être", ar: "أتقن الأفعال الرابطة" } },
+      { id: "l17", title: { en: "Grammar: questions", fr: "Grammaire: questions", ar: "قواعد: الاستفهام" }, categoryId: "letters_en", activity: "grammar", goal: { en: "Ask correctly", fr: "Poser des questions", ar: "اطرح الأسئلة بصحة" } },
     ],
   },
   {
