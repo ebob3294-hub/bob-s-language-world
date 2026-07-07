@@ -33,6 +33,8 @@ const ACTIVITY_LABEL: Record<string, string> = {
   quiz: "⭐ Quiz",
   spelling: "🔤 Spelling",
   explore: "🔍 Explore",
+  dialogue: "💬 Dialogue",
+  grammar: "📘 Grammar",
 };
 
 function AgePage() {
