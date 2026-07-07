@@ -46,6 +46,11 @@ export const AGE_GROUPS: AgeGroup[] = [
       { id: "l4", title: { en: "Yummy fruits", fr: "Fruits délicieux", ar: "فواكه لذيذة" }, categoryId: "fruits", activity: "flashcards", goal: { en: "Name 8 fruits", fr: "Nommer 8 fruits", ar: "سمِّ 8 فواكه" } },
       { id: "l5", title: { en: "My family", fr: "Ma famille", ar: "عائلتي" }, categoryId: "family", activity: "explore", goal: { en: "Learn family words", fr: "Apprendre les mots de famille", ar: "تعلّم كلمات العائلة" } },
       { id: "l6", title: { en: "My body", fr: "Mon corps", ar: "جسمي" }, categoryId: "body", activity: "matching", goal: { en: "Point and say", fr: "Montre et dis", ar: "أشر وقُل" } },
+      { id: "l7", title: { en: "Shapes around me", fr: "Les formes", ar: "الأشكال حولي" }, categoryId: "shapes", activity: "matching", goal: { en: "Match 6 shapes", fr: "Associer 6 formes", ar: "طابق 6 أشكال" } },
+      { id: "l8", title: { en: "Yummy food", fr: "Nourriture délicieuse", ar: "طعام لذيذ" }, categoryId: "food", activity: "flashcards", goal: { en: "Name common foods", fr: "Nommer les aliments", ar: "سمِّ الأطعمة" } },
+      { id: "l9", title: { en: "Numbers 1–10 quiz", fr: "Quiz des nombres 1–10", ar: "اختبار الأرقام 1–10" }, categoryId: "numbers", activity: "quiz", goal: { en: "Quick number quiz", fr: "Petit quiz des nombres", ar: "اختبار سريع للأرقام" } },
+      { id: "l10", title: { en: "Colors matching", fr: "Associer les couleurs", ar: "مطابقة الألوان" }, categoryId: "colors", activity: "matching", goal: { en: "Match 6 colors", fr: "Associer 6 couleurs", ar: "طابق 6 ألوان" } },
+      { id: "l11", title: { en: "Fruits flashcards", fr: "Cartes de fruits", ar: "بطاقات الفواكه" }, categoryId: "fruits", activity: "flashcards", goal: { en: "Learn 8 fruits", fr: "Apprendre 8 fruits", ar: "تعلّم 8 فواكه" } },
     ],
   },
 
