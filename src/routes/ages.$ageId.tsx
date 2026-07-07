@@ -71,6 +71,8 @@ function AgePage() {
                 : lesson.activity === "matching" ? "/play/matching"
                 : lesson.activity === "quiz" ? "/play/quiz"
                 : lesson.activity === "spelling" ? "/play/spelling"
+                : lesson.activity === "dialogue" ? `/play/dialogues?age=${group.id}`
+                : lesson.activity === "grammar" ? `/play/grammar?age=${group.id}`
                 : `/category/${lesson.categoryId}`;
 
               return (
