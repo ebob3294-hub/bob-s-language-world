@@ -103,6 +103,12 @@ export const AGE_GROUPS: AgeGroup[] = [
       { id: "l6", title: { en: "Advanced weather", fr: "Météo avancée", ar: "طقس متقدّم" }, categoryId: "weather", activity: "quiz", goal: { en: "Weather quiz", fr: "Quiz météo", ar: "اختبار الطقس" } },
       { id: "l7", title: { en: "School subjects", fr: "Matières scolaires", ar: "المواد الدراسية" }, categoryId: "school", activity: "flashcards", goal: { en: "Review school", fr: "Revoir l'école", ar: "راجع المدرسة" } },
       { id: "l8", title: { en: "Story time", fr: "L'heure du conte", ar: "وقت القصة" }, categoryId: "feelings", activity: "explore", goal: { en: "Read a story", fr: "Lire une histoire", ar: "اقرأ قصة" } },
+      { id: "l9", title: { en: "Nature quiz", fr: "Quiz nature", ar: "اختبار الطبيعة" }, categoryId: "nature", activity: "quiz", goal: { en: "10 nature questions", fr: "10 questions nature", ar: "10 أسئلة عن الطبيعة" } },
+      { id: "l10", title: { en: "Vehicles spelling", fr: "Épeler les véhicules", ar: "تهجّة المركبات" }, categoryId: "vehicles", activity: "spelling", goal: { en: "Spell 6 vehicles", fr: "Épeler 6 véhicules", ar: "تهجّة 6 مركبات" } },
+      { id: "l11", title: { en: "Days & feelings", fr: "Jours et émotions", ar: "الأيام والمشاعر" }, categoryId: "days", activity: "matching", goal: { en: "Match days & moods", fr: "Associer jours et humeurs", ar: "طابق الأيام والمشاعر" } },
+      { id: "l12", title: { en: "Sports quiz", fr: "Quiz sportif", ar: "اختبار رياضي" }, categoryId: "sports", activity: "quiz", goal: { en: "Test sports words", fr: "Tester le vocabulaire", ar: "اختبار مفردات الرياضة" } },
+      { id: "l13", title: { en: "Arabic reading", fr: "Lecture arabe", ar: "قراءة عربية" }, categoryId: "letters_ar", activity: "flashcards", goal: { en: "Review Arabic letters", fr: "Réviser l'arabe", ar: "راجع الحروف العربية" } },
+      { id: "l14", title: { en: "Tech matching", fr: "Associer la tech", ar: "مطابقة التقنية" }, categoryId: "tech", activity: "matching", goal: { en: "Match 8 tech words", fr: "Associer 8 mots tech", ar: "طابق 8 كلمات تقنية" } },
     ],
   },
 ];
