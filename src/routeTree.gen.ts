@@ -16,6 +16,7 @@ import { Route as StoriesStoryIdRouteImport } from './routes/stories.$storyId'
 import { Route as PlaySpellingRouteImport } from './routes/play.spelling'
 import { Route as PlayQuizRouteImport } from './routes/play.quiz'
 import { Route as PlayMatchingRouteImport } from './routes/play.matching'
+import { Route as PlayGrammarRouteImport } from './routes/play.grammar'
 import { Route as PlayFlashcardsRouteImport } from './routes/play.flashcards'
 import { Route as PlayDialoguesRouteImport } from './routes/play.dialogues'
 import { Route as CategoryCategoryIdRouteImport } from './routes/category.$categoryId'
@@ -56,6 +57,11 @@ const PlayMatchingRoute = PlayMatchingRouteImport.update({
   path: '/play/matching',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlayGrammarRoute = PlayGrammarRouteImport.update({
+  id: '/play/grammar',
+  path: '/play/grammar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlayFlashcardsRoute = PlayFlashcardsRouteImport.update({
   id: '/play/flashcards',
   path: '/play/flashcards',
@@ -84,6 +90,7 @@ export interface FileRoutesByFullPath {
   '/category/$categoryId': typeof CategoryCategoryIdRoute
   '/play/dialogues': typeof PlayDialoguesRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
+  '/play/grammar': typeof PlayGrammarRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
   '/play/spelling': typeof PlaySpellingRoute
@@ -97,6 +104,7 @@ export interface FileRoutesByTo {
   '/category/$categoryId': typeof CategoryCategoryIdRoute
   '/play/dialogues': typeof PlayDialoguesRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
+  '/play/grammar': typeof PlayGrammarRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
   '/play/spelling': typeof PlaySpellingRoute
@@ -111,6 +119,7 @@ export interface FileRoutesById {
   '/category/$categoryId': typeof CategoryCategoryIdRoute
   '/play/dialogues': typeof PlayDialoguesRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
+  '/play/grammar': typeof PlayGrammarRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
   '/play/spelling': typeof PlaySpellingRoute
@@ -126,6 +135,7 @@ export interface FileRouteTypes {
     | '/category/$categoryId'
     | '/play/dialogues'
     | '/play/flashcards'
+    | '/play/grammar'
     | '/play/matching'
     | '/play/quiz'
     | '/play/spelling'
@@ -139,6 +149,7 @@ export interface FileRouteTypes {
     | '/category/$categoryId'
     | '/play/dialogues'
     | '/play/flashcards'
+    | '/play/grammar'
     | '/play/matching'
     | '/play/quiz'
     | '/play/spelling'
@@ -152,6 +163,7 @@ export interface FileRouteTypes {
     | '/category/$categoryId'
     | '/play/dialogues'
     | '/play/flashcards'
+    | '/play/grammar'
     | '/play/matching'
     | '/play/quiz'
     | '/play/spelling'
@@ -166,6 +178,7 @@ export interface RootRouteChildren {
   CategoryCategoryIdRoute: typeof CategoryCategoryIdRoute
   PlayDialoguesRoute: typeof PlayDialoguesRoute
   PlayFlashcardsRoute: typeof PlayFlashcardsRoute
+  PlayGrammarRoute: typeof PlayGrammarRoute
   PlayMatchingRoute: typeof PlayMatchingRoute
   PlayQuizRoute: typeof PlayQuizRoute
   PlaySpellingRoute: typeof PlaySpellingRoute
@@ -224,6 +237,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlayMatchingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/play/grammar': {
+      id: '/play/grammar'
+      path: '/play/grammar'
+      fullPath: '/play/grammar'
+      preLoaderRoute: typeof PlayGrammarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/play/flashcards': {
       id: '/play/flashcards'
       path: '/play/flashcards'
@@ -262,6 +282,7 @@ const rootRouteChildren: RootRouteChildren = {
   CategoryCategoryIdRoute: CategoryCategoryIdRoute,
   PlayDialoguesRoute: PlayDialoguesRoute,
   PlayFlashcardsRoute: PlayFlashcardsRoute,
+  PlayGrammarRoute: PlayGrammarRoute,
   PlayMatchingRoute: PlayMatchingRoute,
   PlayQuizRoute: PlayQuizRoute,
   PlaySpellingRoute: PlaySpellingRoute,

@@ -10,7 +10,7 @@ export interface Lesson {
   title: { en: string; fr: string; ar: string };
   categoryId: string;
   goal: { en: string; fr: string; ar: string };
-  activity: "flashcards" | "matching" | "quiz" | "spelling" | "explore";
+  activity: "flashcards" | "matching" | "quiz" | "spelling" | "explore" | "dialogue" | "grammar";
 }
 
 export interface AgeGroup {
