@@ -115,6 +115,11 @@ export const AGE_GROUPS: AgeGroup[] = [
       { id: "l12", title: { en: "Sports quiz", fr: "Quiz sportif", ar: "اختبار رياضي" }, categoryId: "sports", activity: "quiz", goal: { en: "Test sports words", fr: "Tester le vocabulaire", ar: "اختبار مفردات الرياضة" } },
       { id: "l13", title: { en: "Arabic reading", fr: "Lecture arabe", ar: "قراءة عربية" }, categoryId: "letters_ar", activity: "flashcards", goal: { en: "Review Arabic letters", fr: "Réviser l'arabe", ar: "راجع الحروف العربية" } },
       { id: "l14", title: { en: "Tech matching", fr: "Associer la tech", ar: "مطابقة التقنية" }, categoryId: "tech", activity: "matching", goal: { en: "Match 8 tech words", fr: "Associer 8 mots tech", ar: "طابق 8 كلمات تقنية" } },
+      { id: "l15", title: { en: "Dialogue: hobbies", fr: "Dialogue: loisirs", ar: "محاورة: الهوايات" }, categoryId: "sports", activity: "dialogue", goal: { en: "Talk about free time", fr: "Parler du temps libre", ar: "تحدث عن وقت الفراغ" } },
+      { id: "l16", title: { en: "Dialogue: directions", fr: "Dialogue: le chemin", ar: "محاورة: السؤال عن الطريق" }, categoryId: "vehicles", activity: "dialogue", goal: { en: "Ask & give directions", fr: "Demander le chemin", ar: "اسأل عن الطريق" } },
+      { id: "l17", title: { en: "Grammar: past simple", fr: "Grammaire: passé", ar: "قواعد: الفعل الماضي" }, categoryId: "letters_fr", activity: "grammar", goal: { en: "Talk about the past", fr: "Parler du passé", ar: "تحدث عن الماضي" } },
+      { id: "l18", title: { en: "Grammar: future & plans", fr: "Grammaire: futur", ar: "قواعد: المستقبل" }, categoryId: "letters_fr", activity: "grammar", goal: { en: "Talk about plans", fr: "Parler du futur", ar: "تحدث عن المستقبل" } },
+      { id: "l19", title: { en: "Grammar: if... then", fr: "Grammaire: si...", ar: "قواعد: الشرط" }, categoryId: "letters_ar", activity: "grammar", goal: { en: "Conditionals", fr: "Le conditionnel", ar: "أساليب الشرط" } },
     ],
   },
 ];
