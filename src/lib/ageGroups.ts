@@ -75,6 +75,11 @@ export const AGE_GROUPS: AgeGroup[] = [
       { id: "l6", title: { en: "Vehicles I know", fr: "Véhicules que je connais", ar: "المركبات التي أعرفها" }, categoryId: "vehicles", activity: "matching", goal: { en: "Match 8 vehicles", fr: "Associer 8 véhicules", ar: "طابق 8 مركبات" } },
       { id: "l7", title: { en: "Days of the week", fr: "Jours de la semaine", ar: "أيام الأسبوع" }, categoryId: "days", activity: "flashcards", goal: { en: "Learn 7 days", fr: "Apprendre les 7 jours", ar: "تعلّم 7 أيام" } },
       { id: "l8", title: { en: "How do I feel?", fr: "Comment je me sens ?", ar: "كيف أشعر؟" }, categoryId: "feelings", activity: "explore", goal: { en: "Name feelings", fr: "Nommer les émotions", ar: "سمِّ المشاعر" } },
+      { id: "l9", title: { en: "Animals quiz", fr: "Quiz des animaux", ar: "اختبار الحيوانات" }, categoryId: "animals", activity: "quiz", goal: { en: "10 animal questions", fr: "10 questions", ar: "10 أسئلة عن الحيوانات" } },
+      { id: "l10", title: { en: "Food & vegetables", fr: "Nourriture et légumes", ar: "الطعام والخضروات" }, categoryId: "vegetables", activity: "flashcards", goal: { en: "Learn 10 veggies", fr: "Apprendre 10 légumes", ar: "تعلّم 10 خضروات" } },
+      { id: "l11", title: { en: "Spell house items", fr: "Épeler la maison", ar: "تهجّة أدوات المنزل" }, categoryId: "house", activity: "spelling", goal: { en: "Spell 6 items", fr: "Épeler 6 objets", ar: "تهجّة 6 أدوات" } },
+      { id: "l12", title: { en: "French letters", fr: "Lettres françaises", ar: "الحروف الفرنسية" }, categoryId: "letters_fr", activity: "flashcards", goal: { en: "Learn A–Z (FR)", fr: "Apprendre A–Z", ar: "تعلّم الحروف الفرنسية" } },
+      { id: "l13", title: { en: "Numbers spelling", fr: "Épeler les nombres", ar: "تهجّة الأرقام" }, categoryId: "numbers", activity: "spelling", goal: { en: "Spell 10 numbers", fr: "Épeler 10 nombres", ar: "تهجّة 10 أرقام" } },
     ],
   },
   {
