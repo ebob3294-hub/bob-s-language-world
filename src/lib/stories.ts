@@ -747,7 +747,7 @@ export const STORIES: Story[] = [
     moral: { en: "Honesty is always rewarded.", fr: "L'honnêteté est toujours récompensée.", ar: "الصدق دائمًا مكافأ." },
   },
   {
-    id: "goldilocks",
+    id: "goldilocks-again",
     emoji: "🐻",
     color: "orange",
     ageLevel: "kids",
@@ -872,6 +872,237 @@ export const STORIES: Story[] = [
       ],
     },
     moral: { en: "A shared talent grows brighter.", fr: "Un talent partagé brille davantage.", ar: "الموهبة تُشرق حين تُشارَك." },
+  },
+
+  // ==================== Even more LITTLE (3–5) ====================
+  {
+    id: "shy-butterfly",
+    emoji: "🦋",
+    color: "pink",
+    ageLevel: "little",
+    title: { en: "The Shy Butterfly", fr: "Le Papillon Timide", ar: "الفراشة الخجولة" },
+    paragraphs: {
+      en: [
+        "A small butterfly hid inside a big red flower.",
+        "A friendly bee said: 'Come and play with us in the sun!'",
+        "She opened her wings and danced in the light. She was not shy anymore.",
+      ],
+      fr: [
+        "Un petit papillon se cachait dans une grande fleur rouge.",
+        "Une gentille abeille dit : « Viens jouer avec nous au soleil ! »",
+        "Il ouvrit ses ailes et dansa dans la lumière. Il n'était plus timide.",
+      ],
+      ar: [
+        "اختبأت فراشة صغيرة داخل زهرة حمراء كبيرة.",
+        "قالت نحلة لطيفة: «تعالي نلعب معًا في الشمس!»",
+        "فتحت جناحيها ورقصت في النور. لم تعد خجولة.",
+      ],
+    },
+    moral: { en: "Friends help us shine.", fr: "Les amis nous font briller.", ar: "الأصدقاء يجعلوننا نتألق." },
+  },
+  {
+    id: "little-cloud",
+    emoji: "☁️",
+    color: "blue",
+    ageLevel: "little",
+    title: { en: "The Little Cloud", fr: "Le Petit Nuage", ar: "الغيمة الصغيرة" },
+    paragraphs: {
+      en: [
+        "A little cloud floated in the blue sky. She saw thirsty flowers below.",
+        "'I want to help!' she said. She squeezed herself and rain fell softly.",
+        "The flowers smiled and grew tall. The little cloud was very happy.",
+      ],
+      fr: [
+        "Un petit nuage flottait dans le ciel bleu. Il vit des fleurs assoiffées.",
+        "« Je veux aider ! » dit-il. Il se serra et une douce pluie tomba.",
+        "Les fleurs sourirent et grandirent. Le petit nuage fut très heureux.",
+      ],
+      ar: [
+        "طافت غيمة صغيرة في السماء الزرقاء. رأت زهورًا عطشى في الأسفل.",
+        "قالت: «أريد أن أساعد!» فعصرت نفسها فسقط المطر برفق.",
+        "ابتسمت الزهور ونمت عالية. فرحت الغيمة الصغيرة كثيرًا.",
+      ],
+    },
+    moral: { en: "Helping others makes us happy.", fr: "Aider les autres nous rend heureux.", ar: "مساعدة الآخرين تسعدنا." },
+  },
+  {
+    id: "little-turtle",
+    emoji: "🐢",
+    color: "green",
+    ageLevel: "little",
+    title: { en: "The Little Turtle", fr: "La Petite Tortue", ar: "السلحفاة الصغيرة" },
+    paragraphs: {
+      en: [
+        "A little turtle was slow, and all her friends went ahead.",
+        "She did not cry. She kept walking, step by step.",
+        "At the end of the day, she arrived and everyone hugged her.",
+      ],
+      fr: [
+        "Une petite tortue était lente et ses amis partirent devant.",
+        "Elle ne pleura pas. Elle continua, pas à pas.",
+        "Le soir, elle arriva et tout le monde la serra dans ses bras.",
+      ],
+      ar: [
+        "كانت سلحفاةٌ صغيرة بطيئة، وسبقها أصدقاؤها.",
+        "لم تبكِ. تابعت المسير خطوةً خطوة.",
+        "في نهاية اليوم، وصلت واحتضنها الجميع.",
+      ],
+    },
+    moral: { en: "Never give up.", fr: "N'abandonne jamais.", ar: "لا تستسلم أبدًا." },
+  },
+
+  // ==================== Even more KIDS (5–9) ====================
+  {
+    id: "lost-kitten",
+    emoji: "🐈",
+    color: "orange",
+    ageLevel: "kids",
+    title: { en: "The Lost Kitten", fr: "Le Chaton Perdu", ar: "الهرّة الضائعة" },
+    paragraphs: {
+      en: [
+        "A little kitten got lost in a big city. She was scared of the loud cars.",
+        "A kind boy found her under a bench. He gave her milk and warm hands.",
+        "He walked all around the neighborhood until he found her worried family. The kitten purred with joy.",
+      ],
+      fr: [
+        "Un petit chaton se perdit dans une grande ville. Il avait peur des voitures bruyantes.",
+        "Un gentil garçon le trouva sous un banc. Il lui donna du lait et des mains chaudes.",
+        "Il fit le tour du quartier jusqu'à trouver la famille inquiète. Le chaton ronronna de joie.",
+      ],
+      ar: [
+        "ضاعت هرّةٌ صغيرة في مدينة كبيرة. خافت من أصوات السيارات.",
+        "وجدها ولدٌ طيب تحت مقعد. أعطاها حليبًا ودفّأها بيديه.",
+        "طاف بها الحي حتى وجد عائلتها القلقة. خرخرت الهرّة من الفرح.",
+      ],
+    },
+    moral: { en: "Small acts of kindness matter.", fr: "Les petits gestes de gentillesse comptent.", ar: "أفعال الخير الصغيرة عظيمة." },
+  },
+  {
+    id: "magic-paintbrush",
+    emoji: "🖌️",
+    color: "purple",
+    ageLevel: "kids",
+    title: { en: "The Magic Paintbrush", fr: "Le Pinceau Magique", ar: "الفرشاة السحرية" },
+    paragraphs: {
+      en: [
+        "A poor boy loved to draw. One night an old woman gave him a magic paintbrush.",
+        "Everything he painted became real! He painted food for the hungry and boats for the fishermen.",
+        "A greedy king took the brush and painted gold, but the sea he painted swallowed him. Kindness ruled again.",
+      ],
+      fr: [
+        "Un garçon pauvre aimait dessiner. Une vieille dame lui donna un pinceau magique.",
+        "Tout ce qu'il peignait devenait réel ! Il peignit de la nourriture pour les affamés et des bateaux pour les pêcheurs.",
+        "Un roi avide vola le pinceau et peignit de l'or, mais la mer qu'il peignit l'emporta. La bonté régna à nouveau.",
+      ],
+      ar: [
+        "أحبّ ولدٌ فقير الرسم. أعطته عجوزٌ ذات ليلة فرشاةً سحرية.",
+        "كل ما يرسمه يصبح حقيقيًا! رسم طعامًا للجائعين وقواربَ للصيادين.",
+        "أخذ الفرشاة ملكٌ جشع ورسم ذهبًا، لكن البحر الذي رسمه ابتلعه. وعادت الطيبة تحكم.",
+      ],
+    },
+    moral: { en: "Use gifts to help others.", fr: "Utilise tes dons pour aider les autres.", ar: "استخدم مواهبك لخدمة الآخرين." },
+  },
+  {
+    id: "kind-elephant",
+    emoji: "🐘",
+    color: "green",
+    ageLevel: "kids",
+    title: { en: "The Kind Elephant", fr: "L'Éléphant Gentil", ar: "الفيل الطيب" },
+    paragraphs: {
+      en: [
+        "A big elephant heard a small mouse crying by the river.",
+        "The mouse's home was flooded. The elephant used his trunk to build a new tiny house on the hill.",
+        "From that day, no matter how small the friend, the elephant always helped.",
+      ],
+      fr: [
+        "Un gros éléphant entendit une petite souris pleurer près de la rivière.",
+        "La maison de la souris était inondée. L'éléphant utilisa sa trompe pour bâtir une nouvelle maisonnette sur la colline.",
+        "Depuis ce jour, quel que soit l'ami, l'éléphant aidait toujours.",
+      ],
+      ar: [
+        "سمع فيلٌ كبير فأرًا صغيرًا يبكي قرب النهر.",
+        "غمر الماء بيت الفأر. استخدم الفيل خرطومه ليبني بيتًا صغيرًا على التلة.",
+        "منذ ذلك اليوم، مهما كان الصديق صغيرًا، ظل الفيل يساعد.",
+      ],
+    },
+    moral: { en: "The strong protect the weak.", fr: "Les forts protègent les faibles.", ar: "الأقوياء يحمون الضعفاء." },
+  },
+
+  // ==================== Even more TWEENS (9–15) ====================
+  {
+    id: "aladdin-lamp",
+    emoji: "🪔",
+    color: "yellow",
+    ageLevel: "tweens",
+    title: { en: "Aladdin and the Lamp", fr: "Aladin et la Lampe", ar: "علاء الدين والمصباح" },
+    paragraphs: {
+      en: [
+        "In a faraway city, a poor boy named Aladdin found an old lamp in a hidden cave.",
+        "When he polished it, a powerful genie appeared and promised to grant his wishes.",
+        "Aladdin used his wishes wisely — to help his mother and marry the princess — but always remembered that his real treasure was a kind heart.",
+      ],
+      fr: [
+        "Dans une lointaine cité, un pauvre garçon nommé Aladin trouva une vieille lampe dans une grotte cachée.",
+        "En la frottant, un puissant génie apparut et promit d'exaucer ses vœux.",
+        "Aladin utilisa ses vœux avec sagesse — aider sa mère, épouser la princesse — mais il n'oublia jamais que son vrai trésor était un cœur bon.",
+      ],
+      ar: [
+        "في مدينةٍ بعيدة، وجد ولدٌ فقير اسمه علاء الدين مصباحًا قديمًا في كهفٍ خفيّ.",
+        "لما مسحه، ظهر جنيٌّ عظيم ووعده بتحقيق أمنياته.",
+        "استخدم علاء الدين أمنياته بحكمة — ليساعد أمه ويتزوج الأميرة — وظلّ يعلم أن كنزه الحقيقي هو قلبه الطيب.",
+      ],
+    },
+    moral: { en: "A kind heart is the greatest treasure.", fr: "Un cœur bon est le plus grand trésor.", ar: "القلب الطيب أعظم الكنوز." },
+  },
+  {
+    id: "wise-owl",
+    emoji: "🦉",
+    color: "purple",
+    ageLevel: "tweens",
+    title: { en: "The Wise Old Owl", fr: "Le Vieux Hibou Sage", ar: "البومة الحكيمة" },
+    paragraphs: {
+      en: [
+        "An old owl sat on an oak. The more he saw, the less he spoke; the less he spoke, the more he heard.",
+        "Young birds came to him with noisy questions. He listened first, then answered gently.",
+        "They learned that a listening ear teaches more than a loud voice.",
+      ],
+      fr: [
+        "Un vieux hibou perché sur un chêne. Plus il voyait, moins il parlait ; moins il parlait, plus il entendait.",
+        "De jeunes oiseaux venaient avec des questions bruyantes. Il écoutait d'abord, puis répondait doucement.",
+        "Ils comprirent qu'une oreille attentive enseigne plus qu'une voix forte.",
+      ],
+      ar: [
+        "جلست بومةٌ عجوزٌ على شجرة بلوط. كلما رأت أكثر، تكلّمت أقل؛ وكلما تكلّمت أقل، سمعت أكثر.",
+        "جاءها طيورٌ صغار بأسئلة صاخبة. أنصتت أولًا، ثم أجابت بلطف.",
+        "تعلّموا أن الأذن المُصغية تُعلِّم أكثر من الصوت العالي.",
+      ],
+    },
+    moral: { en: "Listen more, speak less.", fr: "Écoute plus, parle moins.", ar: "أنصت أكثر وتكلّم أقل." },
+  },
+  {
+    id: "silver-key",
+    emoji: "🗝️",
+    color: "blue",
+    ageLevel: "tweens",
+    title: { en: "The Silver Key", fr: "La Clé d'Argent", ar: "المفتاح الفضي" },
+    paragraphs: {
+      en: [
+        "A curious girl found a silver key in her grandmother's attic. It fit no door she knew.",
+        "For years she carried it, trying every lock. She met many people and learned many stories along the way.",
+        "In the end she understood: the key opened not a door, but her own path in the world.",
+      ],
+      fr: [
+        "Une fille curieuse trouva une clé d'argent dans le grenier de sa grand-mère. Elle n'ouvrait aucune porte connue.",
+        "Pendant des années, elle la porta, essayant chaque serrure. Elle rencontra des gens et apprit des histoires.",
+        "Enfin, elle comprit : la clé n'ouvrait pas une porte, mais son propre chemin dans le monde.",
+      ],
+      ar: [
+        "وجدت فتاةٌ فضولية مفتاحًا فضيًا في علية جدّتها. لم يفتح أي بابٍ تعرفه.",
+        "حملته سنواتٍ تجرّبه في كل قفل. قابلت أناسًا كثيرين وتعلّمت منهم حكاياتٍ عديدة.",
+        "في النهاية فهمت: لم يكن المفتاح يفتح بابًا، بل طريقها الخاص في الحياة.",
+      ],
+    },
+    moral: { en: "The journey teaches more than the goal.", fr: "Le voyage enseigne plus que le but.", ar: "الرحلة تعلّم أكثر من الهدف." },
   },
 ];
 
