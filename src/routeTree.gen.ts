@@ -17,6 +17,7 @@ import { Route as PlaySpellingRouteImport } from './routes/play.spelling'
 import { Route as PlayQuizRouteImport } from './routes/play.quiz'
 import { Route as PlayMatchingRouteImport } from './routes/play.matching'
 import { Route as PlayFlashcardsRouteImport } from './routes/play.flashcards'
+import { Route as PlayDialoguesRouteImport } from './routes/play.dialogues'
 import { Route as CategoryCategoryIdRouteImport } from './routes/category.$categoryId'
 import { Route as AgesAgeIdRouteImport } from './routes/ages.$ageId'
 
@@ -60,6 +61,11 @@ const PlayFlashcardsRoute = PlayFlashcardsRouteImport.update({
   path: '/play/flashcards',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlayDialoguesRoute = PlayDialoguesRouteImport.update({
+  id: '/play/dialogues',
+  path: '/play/dialogues',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CategoryCategoryIdRoute = CategoryCategoryIdRouteImport.update({
   id: '/category/$categoryId',
   path: '/category/$categoryId',
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
+  '/play/dialogues': typeof PlayDialoguesRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
+  '/play/dialogues': typeof PlayDialoguesRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
+  '/play/dialogues': typeof PlayDialoguesRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ages/$ageId'
     | '/category/$categoryId'
+    | '/play/dialogues'
     | '/play/flashcards'
     | '/play/matching'
     | '/play/quiz'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ages/$ageId'
     | '/category/$categoryId'
+    | '/play/dialogues'
     | '/play/flashcards'
     | '/play/matching'
     | '/play/quiz'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/ages/$ageId'
     | '/category/$categoryId'
+    | '/play/dialogues'
     | '/play/flashcards'
     | '/play/matching'
     | '/play/quiz'
@@ -152,6 +164,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AgesAgeIdRoute: typeof AgesAgeIdRoute
   CategoryCategoryIdRoute: typeof CategoryCategoryIdRoute
+  PlayDialoguesRoute: typeof PlayDialoguesRoute
   PlayFlashcardsRoute: typeof PlayFlashcardsRoute
   PlayMatchingRoute: typeof PlayMatchingRoute
   PlayQuizRoute: typeof PlayQuizRoute
@@ -218,6 +231,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlayFlashcardsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/play/dialogues': {
+      id: '/play/dialogues'
+      path: '/play/dialogues'
+      fullPath: '/play/dialogues'
+      preLoaderRoute: typeof PlayDialoguesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/category/$categoryId': {
       id: '/category/$categoryId'
       path: '/category/$categoryId'
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AgesAgeIdRoute: AgesAgeIdRoute,
   CategoryCategoryIdRoute: CategoryCategoryIdRoute,
+  PlayDialoguesRoute: PlayDialoguesRoute,
   PlayFlashcardsRoute: PlayFlashcardsRoute,
   PlayMatchingRoute: PlayMatchingRoute,
   PlayQuizRoute: PlayQuizRoute,
