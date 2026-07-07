@@ -51,6 +51,8 @@ export const AGE_GROUPS: AgeGroup[] = [
       { id: "l9", title: { en: "Numbers 1–10 quiz", fr: "Quiz des nombres 1–10", ar: "اختبار الأرقام 1–10" }, categoryId: "numbers", activity: "quiz", goal: { en: "Quick number quiz", fr: "Petit quiz des nombres", ar: "اختبار سريع للأرقام" } },
       { id: "l10", title: { en: "Colors matching", fr: "Associer les couleurs", ar: "مطابقة الألوان" }, categoryId: "colors", activity: "matching", goal: { en: "Match 6 colors", fr: "Associer 6 couleurs", ar: "طابق 6 ألوان" } },
       { id: "l11", title: { en: "Fruits flashcards", fr: "Cartes de fruits", ar: "بطاقات الفواكه" }, categoryId: "fruits", activity: "flashcards", goal: { en: "Learn 8 fruits", fr: "Apprendre 8 fruits", ar: "تعلّم 8 فواكه" } },
+      { id: "l12", title: { en: "Say hello (dialogue)", fr: "Dire bonjour (dialogue)", ar: "قل مرحبًا (محاورة)" }, categoryId: "family", activity: "dialogue", goal: { en: "Greet like a friend", fr: "Saluer comme un ami", ar: "حيّي مثل الأصدقاء" } },
+      { id: "l13", title: { en: "First grammar: a / an", fr: "Grammaire: un / une", ar: "قواعد: التنكير" }, categoryId: "letters_en", activity: "grammar", goal: { en: "Learn a/an/the", fr: "Apprendre les articles", ar: "تعلّم أدوات التنكير" } },
     ],
   },
 
