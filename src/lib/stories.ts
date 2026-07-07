@@ -747,7 +747,7 @@ export const STORIES: Story[] = [
     moral: { en: "Honesty is always rewarded.", fr: "L'honnêteté est toujours récompensée.", ar: "الصدق دائمًا مكافأ." },
   },
   {
-    id: "goldilocks",
+    id: "goldilocks-again",
     emoji: "🐻",
     color: "orange",
     ageLevel: "kids",
