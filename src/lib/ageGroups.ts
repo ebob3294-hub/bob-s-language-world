@@ -10,7 +10,7 @@ export interface Lesson {
   title: { en: string; fr: string; ar: string };
   categoryId: string;
   goal: { en: string; fr: string; ar: string };
-  activity: "flashcards" | "matching" | "quiz" | "spelling" | "explore";
+  activity: "flashcards" | "matching" | "quiz" | "spelling" | "explore" | "dialogue" | "grammar";
 }
 
 export interface AgeGroup {
@@ -51,6 +51,8 @@ export const AGE_GROUPS: AgeGroup[] = [
       { id: "l9", title: { en: "Numbers 1–10 quiz", fr: "Quiz des nombres 1–10", ar: "اختبار الأرقام 1–10" }, categoryId: "numbers", activity: "quiz", goal: { en: "Quick number quiz", fr: "Petit quiz des nombres", ar: "اختبار سريع للأرقام" } },
       { id: "l10", title: { en: "Colors matching", fr: "Associer les couleurs", ar: "مطابقة الألوان" }, categoryId: "colors", activity: "matching", goal: { en: "Match 6 colors", fr: "Associer 6 couleurs", ar: "طابق 6 ألوان" } },
       { id: "l11", title: { en: "Fruits flashcards", fr: "Cartes de fruits", ar: "بطاقات الفواكه" }, categoryId: "fruits", activity: "flashcards", goal: { en: "Learn 8 fruits", fr: "Apprendre 8 fruits", ar: "تعلّم 8 فواكه" } },
+      { id: "l12", title: { en: "Say hello (dialogue)", fr: "Dire bonjour (dialogue)", ar: "قل مرحبًا (محاورة)" }, categoryId: "family", activity: "dialogue", goal: { en: "Greet like a friend", fr: "Saluer comme un ami", ar: "حيّي مثل الأصدقاء" } },
+      { id: "l13", title: { en: "First grammar: a / an", fr: "Grammaire: un / une", ar: "قواعد: التنكير" }, categoryId: "letters_en", activity: "grammar", goal: { en: "Learn a/an/the", fr: "Apprendre les articles", ar: "تعلّم أدوات التنكير" } },
     ],
   },
 
@@ -80,6 +82,10 @@ export const AGE_GROUPS: AgeGroup[] = [
       { id: "l11", title: { en: "Spell house items", fr: "Épeler la maison", ar: "تهجّة أدوات المنزل" }, categoryId: "house", activity: "spelling", goal: { en: "Spell 6 items", fr: "Épeler 6 objets", ar: "تهجّة 6 أدوات" } },
       { id: "l12", title: { en: "French letters", fr: "Lettres françaises", ar: "الحروف الفرنسية" }, categoryId: "letters_fr", activity: "flashcards", goal: { en: "Learn A–Z (FR)", fr: "Apprendre A–Z", ar: "تعلّم الحروف الفرنسية" } },
       { id: "l13", title: { en: "Numbers spelling", fr: "Épeler les nombres", ar: "تهجّة الأرقام" }, categoryId: "numbers", activity: "spelling", goal: { en: "Spell 10 numbers", fr: "Épeler 10 nombres", ar: "تهجّة 10 أرقام" } },
+      { id: "l14", title: { en: "Dialogue: at the market", fr: "Dialogue: au marché", ar: "محاورة: في السوق" }, categoryId: "food", activity: "dialogue", goal: { en: "Buy things politely", fr: "Acheter poliment", ar: "اشترِ بلباقة" } },
+      { id: "l15", title: { en: "Dialogue: at school", fr: "Dialogue: à l'école", ar: "محاورة: في المدرسة" }, categoryId: "school", activity: "dialogue", goal: { en: "Talk about classes", fr: "Parler des cours", ar: "تحدث عن الحصص" } },
+      { id: "l16", title: { en: "Grammar: verb to be", fr: "Grammaire: être", ar: "قواعد: أفعال الكينونة" }, categoryId: "letters_en", activity: "grammar", goal: { en: "Master to be", fr: "Maîtriser être", ar: "أتقن الأفعال الرابطة" } },
+      { id: "l17", title: { en: "Grammar: questions", fr: "Grammaire: questions", ar: "قواعد: الاستفهام" }, categoryId: "letters_en", activity: "grammar", goal: { en: "Ask correctly", fr: "Poser des questions", ar: "اطرح الأسئلة بصحة" } },
     ],
   },
   {
@@ -109,6 +115,11 @@ export const AGE_GROUPS: AgeGroup[] = [
       { id: "l12", title: { en: "Sports quiz", fr: "Quiz sportif", ar: "اختبار رياضي" }, categoryId: "sports", activity: "quiz", goal: { en: "Test sports words", fr: "Tester le vocabulaire", ar: "اختبار مفردات الرياضة" } },
       { id: "l13", title: { en: "Arabic reading", fr: "Lecture arabe", ar: "قراءة عربية" }, categoryId: "letters_ar", activity: "flashcards", goal: { en: "Review Arabic letters", fr: "Réviser l'arabe", ar: "راجع الحروف العربية" } },
       { id: "l14", title: { en: "Tech matching", fr: "Associer la tech", ar: "مطابقة التقنية" }, categoryId: "tech", activity: "matching", goal: { en: "Match 8 tech words", fr: "Associer 8 mots tech", ar: "طابق 8 كلمات تقنية" } },
+      { id: "l15", title: { en: "Dialogue: hobbies", fr: "Dialogue: loisirs", ar: "محاورة: الهوايات" }, categoryId: "sports", activity: "dialogue", goal: { en: "Talk about free time", fr: "Parler du temps libre", ar: "تحدث عن وقت الفراغ" } },
+      { id: "l16", title: { en: "Dialogue: directions", fr: "Dialogue: le chemin", ar: "محاورة: السؤال عن الطريق" }, categoryId: "vehicles", activity: "dialogue", goal: { en: "Ask & give directions", fr: "Demander le chemin", ar: "اسأل عن الطريق" } },
+      { id: "l17", title: { en: "Grammar: past simple", fr: "Grammaire: passé", ar: "قواعد: الفعل الماضي" }, categoryId: "letters_fr", activity: "grammar", goal: { en: "Talk about the past", fr: "Parler du passé", ar: "تحدث عن الماضي" } },
+      { id: "l18", title: { en: "Grammar: future & plans", fr: "Grammaire: futur", ar: "قواعد: المستقبل" }, categoryId: "letters_fr", activity: "grammar", goal: { en: "Talk about plans", fr: "Parler du futur", ar: "تحدث عن المستقبل" } },
+      { id: "l19", title: { en: "Grammar: if... then", fr: "Grammaire: si...", ar: "قواعد: الشرط" }, categoryId: "letters_ar", activity: "grammar", goal: { en: "Conditionals", fr: "Le conditionnel", ar: "أساليب الشرط" } },
     ],
   },
 ];

@@ -16,7 +16,9 @@ import { Route as StoriesStoryIdRouteImport } from './routes/stories.$storyId'
 import { Route as PlaySpellingRouteImport } from './routes/play.spelling'
 import { Route as PlayQuizRouteImport } from './routes/play.quiz'
 import { Route as PlayMatchingRouteImport } from './routes/play.matching'
+import { Route as PlayGrammarRouteImport } from './routes/play.grammar'
 import { Route as PlayFlashcardsRouteImport } from './routes/play.flashcards'
+import { Route as PlayDialoguesRouteImport } from './routes/play.dialogues'
 import { Route as CategoryCategoryIdRouteImport } from './routes/category.$categoryId'
 import { Route as AgesAgeIdRouteImport } from './routes/ages.$ageId'
 
@@ -55,9 +57,19 @@ const PlayMatchingRoute = PlayMatchingRouteImport.update({
   path: '/play/matching',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlayGrammarRoute = PlayGrammarRouteImport.update({
+  id: '/play/grammar',
+  path: '/play/grammar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlayFlashcardsRoute = PlayFlashcardsRouteImport.update({
   id: '/play/flashcards',
   path: '/play/flashcards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayDialoguesRoute = PlayDialoguesRouteImport.update({
+  id: '/play/dialogues',
+  path: '/play/dialogues',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CategoryCategoryIdRoute = CategoryCategoryIdRouteImport.update({
@@ -76,7 +88,9 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
+  '/play/dialogues': typeof PlayDialoguesRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
+  '/play/grammar': typeof PlayGrammarRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
   '/play/spelling': typeof PlaySpellingRoute
@@ -88,7 +102,9 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
+  '/play/dialogues': typeof PlayDialoguesRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
+  '/play/grammar': typeof PlayGrammarRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
   '/play/spelling': typeof PlaySpellingRoute
@@ -101,7 +117,9 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/ages/$ageId': typeof AgesAgeIdRoute
   '/category/$categoryId': typeof CategoryCategoryIdRoute
+  '/play/dialogues': typeof PlayDialoguesRoute
   '/play/flashcards': typeof PlayFlashcardsRoute
+  '/play/grammar': typeof PlayGrammarRoute
   '/play/matching': typeof PlayMatchingRoute
   '/play/quiz': typeof PlayQuizRoute
   '/play/spelling': typeof PlaySpellingRoute
@@ -115,7 +133,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/ages/$ageId'
     | '/category/$categoryId'
+    | '/play/dialogues'
     | '/play/flashcards'
+    | '/play/grammar'
     | '/play/matching'
     | '/play/quiz'
     | '/play/spelling'
@@ -127,7 +147,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/ages/$ageId'
     | '/category/$categoryId'
+    | '/play/dialogues'
     | '/play/flashcards'
+    | '/play/grammar'
     | '/play/matching'
     | '/play/quiz'
     | '/play/spelling'
@@ -139,7 +161,9 @@ export interface FileRouteTypes {
     | '/about'
     | '/ages/$ageId'
     | '/category/$categoryId'
+    | '/play/dialogues'
     | '/play/flashcards'
+    | '/play/grammar'
     | '/play/matching'
     | '/play/quiz'
     | '/play/spelling'
@@ -152,7 +176,9 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AgesAgeIdRoute: typeof AgesAgeIdRoute
   CategoryCategoryIdRoute: typeof CategoryCategoryIdRoute
+  PlayDialoguesRoute: typeof PlayDialoguesRoute
   PlayFlashcardsRoute: typeof PlayFlashcardsRoute
+  PlayGrammarRoute: typeof PlayGrammarRoute
   PlayMatchingRoute: typeof PlayMatchingRoute
   PlayQuizRoute: typeof PlayQuizRoute
   PlaySpellingRoute: typeof PlaySpellingRoute
@@ -211,11 +237,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlayMatchingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/play/grammar': {
+      id: '/play/grammar'
+      path: '/play/grammar'
+      fullPath: '/play/grammar'
+      preLoaderRoute: typeof PlayGrammarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/play/flashcards': {
       id: '/play/flashcards'
       path: '/play/flashcards'
       fullPath: '/play/flashcards'
       preLoaderRoute: typeof PlayFlashcardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/dialogues': {
+      id: '/play/dialogues'
+      path: '/play/dialogues'
+      fullPath: '/play/dialogues'
+      preLoaderRoute: typeof PlayDialoguesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/category/$categoryId': {
@@ -240,7 +280,9 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AgesAgeIdRoute: AgesAgeIdRoute,
   CategoryCategoryIdRoute: CategoryCategoryIdRoute,
+  PlayDialoguesRoute: PlayDialoguesRoute,
   PlayFlashcardsRoute: PlayFlashcardsRoute,
+  PlayGrammarRoute: PlayGrammarRoute,
   PlayMatchingRoute: PlayMatchingRoute,
   PlayQuizRoute: PlayQuizRoute,
   PlaySpellingRoute: PlaySpellingRoute,

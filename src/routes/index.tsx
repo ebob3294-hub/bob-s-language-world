@@ -214,6 +214,42 @@ function Home() {
                 🔤
               </div>
             </Link>
+            <Link
+              to="/play/dialogues"
+              className="bg-bob-pink p-8 rounded-[40px] text-white group cursor-pointer hover:-translate-y-1 transition-transform shadow-md"
+            >
+              <h5 className="text-2xl font-bold mb-2">Dialogues</h5>
+              <p className="text-white/90 mb-6">
+                Everyday conversations · محاورات · dialogues.
+              </p>
+              <div className="w-full h-32 bg-white/20 rounded-2xl flex items-center justify-center text-5xl">
+                💬
+              </div>
+            </Link>
+            <Link
+              to="/play/grammar"
+              className="bg-bob-blue p-8 rounded-[40px] text-white group cursor-pointer hover:-translate-y-1 transition-transform shadow-md"
+            >
+              <h5 className="text-2xl font-bold mb-2">Grammar</h5>
+              <p className="text-white/90 mb-6">
+                Simple rules · قواعد · règles claires.
+              </p>
+              <div className="w-full h-32 bg-white/20 rounded-2xl flex items-center justify-center text-5xl">
+                📘
+              </div>
+            </Link>
+            <Link
+              to="/stories"
+              className="bg-bob-yellow p-8 rounded-[40px] text-foreground group cursor-pointer hover:-translate-y-1 transition-transform shadow-md"
+            >
+              <h5 className="text-2xl font-bold mb-2">Stories</h5>
+              <p className="text-foreground/80 mb-6">
+                Short tales read aloud in 3 languages.
+              </p>
+              <div className="w-full h-32 bg-white/40 rounded-2xl flex items-center justify-center text-5xl">
+                📚
+              </div>
+            </Link>
           </div>
         </section>
       </main>
