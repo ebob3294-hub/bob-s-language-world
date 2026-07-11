@@ -94,6 +94,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#4CC9FE" },
+      { name: "twitter:title", content: "Learn with Chama — English & French for Kids" },
+      { name: "twitter:description", content: "A joyful language learning playground for kids 3-16. Discover animals, food, clothes and more in English and French with Chama the friendly mascot." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60e660e3-0a7d-418f-98ca-2d048a3f9005/id-preview-877816c3--41faef96-df6e-4422-95fe-e87c7622eee8.lovable.app-1783430676650.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/60e660e3-0a7d-418f-98ca-2d048a3f9005/id-preview-877816c3--41faef96-df6e-4422-95fe-e87c7622eee8.lovable.app-1783430676650.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
