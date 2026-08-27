@@ -7,6 +7,11 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
+    // لضمان نسخ وتخديم ملفات public بما فيها المجلدات الخفية (.well-known)
+    publicDir: "public",
+    build: {
+      copyPublicDir: true,
+    },
     plugins: [
       VitePWA({
         registerType: "autoUpdate",
@@ -16,7 +21,12 @@ export default defineConfig({
         manifest: false, // we serve /public/manifest.webmanifest ourselves
         workbox: {
           navigateFallback: "/",
-          navigateFallbackDenylist: [/^\/~oauth/, /^\/api\//],
+          // استثناء مسار .well-known من SPA fallback لمنع إرجاع 404 أو صفحة HTML
+          navigateFallbackDenylist: [
+            /^\/~oauth/,
+            /^\/api\//,
+            /^\/\.well-known\//,
+          ],
           maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
           globPatterns: [
             "**/*.{js,css,html,ico,json,webmanifest,txt}",
@@ -76,7 +86,6 @@ export default defineConfig({
             },
           ],
         },
-
       }),
     ],
   },
