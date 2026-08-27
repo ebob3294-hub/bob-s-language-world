@@ -1,1 +1,22 @@
+import { createAPIFileRoute } from '@tanstack/start/api';
 
+const assetlinks = [
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.lovable.chama",
+      "sha256_cert_fingerprints": ["48:44:DC:3A:10:96:A5:28:F4:14:20:CA:92:74:2F:33:94:21:9E:3B:93:D5:F6:D7:8A:6F:AA:41:2C:CA:89:57"]
+    }
+  }
+];
+
+export const APIRoute = createAPIFileRoute('/.well-known/assetlinks.json')({
+  GET: () => {
+    return new Response(JSON.stringify(assetlinks), {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  },
+});
