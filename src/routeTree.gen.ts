@@ -9,27 +9,67 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AgesAgeIdRouteImport } from './routes/ages.$ageId'
+import { Route as CategoryCategoryIdRouteImport } from './routes/category.$categoryId'
+import { Route as PlayDialoguesRouteImport } from './routes/play.dialogues'
+import { Route as PlayFlashcardsRouteImport } from './routes/play.flashcards'
+import { Route as PlayGrammarRouteImport } from './routes/play.grammar'
+import { Route as PlayMatchingRouteImport } from './routes/play.matching'
+import { Route as PlayQuizRouteImport } from './routes/play.quiz'
+import { Route as PlaySpellingRouteImport } from './routes/play.spelling'
 import { Route as StoriesIndexRouteImport } from './routes/stories.index'
 import { Route as StoriesStoryIdRouteImport } from './routes/stories.$storyId'
-import { Route as PlaySpellingRouteImport } from './routes/play.spelling'
-import { Route as PlayQuizRouteImport } from './routes/play.quiz'
-import { Route as PlayMatchingRouteImport } from './routes/play.matching'
-import { Route as PlayGrammarRouteImport } from './routes/play.grammar'
-import { Route as PlayFlashcardsRouteImport } from './routes/play.flashcards'
-import { Route as PlayDialoguesRouteImport } from './routes/play.dialogues'
-import { Route as CategoryCategoryIdRouteImport } from './routes/category.$categoryId'
-import { Route as AgesAgeIdRouteImport } from './routes/ages.$ageId'
 
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AgesAgeIdRoute = AgesAgeIdRouteImport.update({
+  id: '/ages/$ageId',
+  path: '/ages/$ageId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CategoryCategoryIdRoute = CategoryCategoryIdRouteImport.update({
+  id: '/category/$categoryId',
+  path: '/category/$categoryId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayDialoguesRoute = PlayDialoguesRouteImport.update({
+  id: '/play/dialogues',
+  path: '/play/dialogues',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayFlashcardsRoute = PlayFlashcardsRouteImport.update({
+  id: '/play/flashcards',
+  path: '/play/flashcards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayGrammarRoute = PlayGrammarRouteImport.update({
+  id: '/play/grammar',
+  path: '/play/grammar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayMatchingRoute = PlayMatchingRouteImport.update({
+  id: '/play/matching',
+  path: '/play/matching',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayQuizRoute = PlayQuizRouteImport.update({
+  id: '/play/quiz',
+  path: '/play/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlaySpellingRoute = PlaySpellingRouteImport.update({
+  id: '/play/spelling',
+  path: '/play/spelling',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StoriesIndexRoute = StoriesIndexRouteImport.update({
@@ -40,46 +80,6 @@ const StoriesIndexRoute = StoriesIndexRouteImport.update({
 const StoriesStoryIdRoute = StoriesStoryIdRouteImport.update({
   id: '/stories/$storyId',
   path: '/stories/$storyId',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlaySpellingRoute = PlaySpellingRouteImport.update({
-  id: '/play/spelling',
-  path: '/play/spelling',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlayQuizRoute = PlayQuizRouteImport.update({
-  id: '/play/quiz',
-  path: '/play/quiz',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlayMatchingRoute = PlayMatchingRouteImport.update({
-  id: '/play/matching',
-  path: '/play/matching',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlayGrammarRoute = PlayGrammarRouteImport.update({
-  id: '/play/grammar',
-  path: '/play/grammar',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlayFlashcardsRoute = PlayFlashcardsRouteImport.update({
-  id: '/play/flashcards',
-  path: '/play/flashcards',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlayDialoguesRoute = PlayDialoguesRouteImport.update({
-  id: '/play/dialogues',
-  path: '/play/dialogues',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CategoryCategoryIdRoute = CategoryCategoryIdRouteImport.update({
-  id: '/category/$categoryId',
-  path: '/category/$categoryId',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AgesAgeIdRoute = AgesAgeIdRouteImport.update({
-  id: '/ages/$ageId',
-  path: '/ages/$ageId',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -188,6 +188,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -195,11 +202,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/ages/$ageId': {
+      id: '/ages/$ageId'
+      path: '/ages/$ageId'
+      fullPath: '/ages/$ageId'
+      preLoaderRoute: typeof AgesAgeIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/category/$categoryId': {
+      id: '/category/$categoryId'
+      path: '/category/$categoryId'
+      fullPath: '/category/$categoryId'
+      preLoaderRoute: typeof CategoryCategoryIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/dialogues': {
+      id: '/play/dialogues'
+      path: '/play/dialogues'
+      fullPath: '/play/dialogues'
+      preLoaderRoute: typeof PlayDialoguesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/flashcards': {
+      id: '/play/flashcards'
+      path: '/play/flashcards'
+      fullPath: '/play/flashcards'
+      preLoaderRoute: typeof PlayFlashcardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/grammar': {
+      id: '/play/grammar'
+      path: '/play/grammar'
+      fullPath: '/play/grammar'
+      preLoaderRoute: typeof PlayGrammarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/matching': {
+      id: '/play/matching'
+      path: '/play/matching'
+      fullPath: '/play/matching'
+      preLoaderRoute: typeof PlayMatchingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/quiz': {
+      id: '/play/quiz'
+      path: '/play/quiz'
+      fullPath: '/play/quiz'
+      preLoaderRoute: typeof PlayQuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/spelling': {
+      id: '/play/spelling'
+      path: '/play/spelling'
+      fullPath: '/play/spelling'
+      preLoaderRoute: typeof PlaySpellingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/stories/': {
@@ -214,62 +270,6 @@ declare module '@tanstack/react-router' {
       path: '/stories/$storyId'
       fullPath: '/stories/$storyId'
       preLoaderRoute: typeof StoriesStoryIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/play/spelling': {
-      id: '/play/spelling'
-      path: '/play/spelling'
-      fullPath: '/play/spelling'
-      preLoaderRoute: typeof PlaySpellingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/play/quiz': {
-      id: '/play/quiz'
-      path: '/play/quiz'
-      fullPath: '/play/quiz'
-      preLoaderRoute: typeof PlayQuizRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/play/matching': {
-      id: '/play/matching'
-      path: '/play/matching'
-      fullPath: '/play/matching'
-      preLoaderRoute: typeof PlayMatchingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/play/grammar': {
-      id: '/play/grammar'
-      path: '/play/grammar'
-      fullPath: '/play/grammar'
-      preLoaderRoute: typeof PlayGrammarRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/play/flashcards': {
-      id: '/play/flashcards'
-      path: '/play/flashcards'
-      fullPath: '/play/flashcards'
-      preLoaderRoute: typeof PlayFlashcardsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/play/dialogues': {
-      id: '/play/dialogues'
-      path: '/play/dialogues'
-      fullPath: '/play/dialogues'
-      preLoaderRoute: typeof PlayDialoguesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/category/$categoryId': {
-      id: '/category/$categoryId'
-      path: '/category/$categoryId'
-      fullPath: '/category/$categoryId'
-      preLoaderRoute: typeof CategoryCategoryIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ages/$ageId': {
-      id: '/ages/$ageId'
-      path: '/ages/$ageId'
-      fullPath: '/ages/$ageId'
-      preLoaderRoute: typeof AgesAgeIdRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
