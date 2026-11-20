@@ -1,0 +1,106 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Learn with Chama — Storybook Papercraft design system.
+ * Warm cream background, playful primary blue/orange/green/yellow mascot palette,
+ * purple reserved for parent-facing UI. Fredoka display for kid content,
+ * Vazirmatn for Arabic parent-facing chrome.
+ */
+
+@theme inline {
+  --font-display: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-bob-blue: var(--bob-blue);
+  --color-bob-yellow: var(--bob-yellow);
+  --color-bob-orange: var(--bob-orange);
+  --color-bob-green: var(--bob-green);
+  --color-bob-pink: var(--bob-pink);
+  --color-bob-cream: var(--bob-cream);
+  --color-parent-purple: var(--parent-purple);
+}
+
+:root {
+  --radius: 1rem;
+
+  --bob-blue: #4CC9FE;
+  --bob-yellow: #FFF3C7;
+  --bob-orange: #FF9F66;
+  --bob-green: #A1DD70;
+  --bob-pink: #FFB4B4;
+  --bob-cream: #FDFCF0;
+  --parent-purple: #7E60BF;
+
+  --background: #FDFCF0;
+  --foreground: #2A2520;
+
+  --card: #FFFFFF;
+  --card-foreground: #2A2520;
+  --popover: #FFFFFF;
+  --popover-foreground: #2A2520;
+
+  --primary: #4CC9FE;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FF9F66;
+  --secondary-foreground: #FFFFFF;
+
+  --muted: #F5F1E4;
+  --muted-foreground: #78716C;
+  --accent: #FFF3C7;
+  --accent-foreground: #2A2520;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #EDE7D5;
+  --input: #EDE7D5;
+  --ring: #4CC9FE;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html,
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-display);
+  }
+
+  :lang(ar),
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+}

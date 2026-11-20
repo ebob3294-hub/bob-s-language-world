@@ -1,0 +1,1 @@
+var e=new URL(`chama-mascot-Bu31d1dH.png`,import.meta.url).href;export{e as t};

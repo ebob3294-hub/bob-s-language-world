@@ -1,0 +1,143 @@
+import { n as __toESM } from "../_runtime.mjs";
+import { t as BobHeader } from "./BobHeader-C4Vf1Aa9.mjs";
+import { i as stripArticle, r as speak, t as CATEGORIES } from "./vocab-B-XLTnh4.mjs";
+import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
+// node_modules/.nitro/vite/services/ssr/assets/play.matching-DPNb_U3K.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
+var ALL = CATEGORIES.flatMap((c) => c.items);
+function pick(arr, n) {
+	const copy = [...arr];
+	const out = [];
+	for (let i = 0; i < n && copy.length; i++) out.push(copy.splice(Math.floor(Math.random() * copy.length), 1)[0]);
+	return out;
+}
+function buildBoard() {
+	const items = pick(ALL, 6);
+	const cards = [];
+	items.forEach((item) => {
+		cards.push({
+			key: `${item.id}-e`,
+			itemId: item.id,
+			face: "emoji",
+			item
+		});
+		cards.push({
+			key: `${item.id}-w`,
+			itemId: item.id,
+			face: "word",
+			item
+		});
+	});
+	for (let i = cards.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[cards[i], cards[j]] = [cards[j], cards[i]];
+	}
+	return cards;
+}
+function Matching() {
+	const [board, setBoard] = (0, import_react.useState)(() => buildBoard());
+	const [flipped, setFlipped] = (0, import_react.useState)([]);
+	const [matched, setMatched] = (0, import_react.useState)(/* @__PURE__ */ new Set());
+	const [moves, setMoves] = (0, import_react.useState)(0);
+	const won = (0, import_react.useMemo)(() => matched.size === board.length, [matched.size, board.length]);
+	(0, import_react.useEffect)(() => {
+		if (flipped.length !== 2) return;
+		const [a, b] = flipped.map((k) => board.find((c) => c.key === k));
+		setMoves((m) => m + 1);
+		if (a.itemId === b.itemId) {
+			const next = new Set(matched);
+			next.add(a.key);
+			next.add(b.key);
+			setMatched(next);
+			speak(stripArticle(a.item.en), "en");
+			setTimeout(() => setFlipped([]), 500);
+		} else setTimeout(() => setFlipped([]), 900);
+	}, [flipped]);
+	const flip = (key) => {
+		if (flipped.length >= 2) return;
+		if (flipped.includes(key) || matched.has(key)) return;
+		setFlipped((f) => [...f, key]);
+	};
+	const restart = () => {
+		setBoard(buildBoard());
+		setFlipped([]);
+		setMatched(/* @__PURE__ */ new Set());
+		setMoves(0);
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "min-h-screen bg-background",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(BobHeader, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
+			className: "max-w-3xl mx-auto p-6 md:p-12",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center justify-between mb-6",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+						to: "/",
+						className: "text-muted-foreground hover:text-bob-blue font-semibold",
+						children: "← Home"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+						className: "text-sm font-bold text-muted-foreground",
+						children: ["Moves: ", moves]
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "text-center mb-6",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+						className: "text-3xl font-bold mb-1",
+						children: "Memory Match"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-muted-foreground",
+						children: "Match each picture with its English word"
+					})]
+				}),
+				won && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "bg-bob-green/20 border-2 border-bob-green rounded-2xl p-4 text-center mb-6",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+						className: "text-lg font-bold",
+						children: [
+							"🎉 You matched all pairs in ",
+							moves,
+							" moves!"
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: restart,
+						className: "mt-3 px-5 py-2 rounded-full bg-bob-green text-white font-bold shadow-sm hover:brightness-110",
+						children: "Play again"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4",
+					children: board.map((c) => {
+						const isOpen = flipped.includes(c.key) || matched.has(c.key);
+						const isMatched = matched.has(c.key);
+						return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							onClick: () => flip(c.key),
+							className: `aspect-square rounded-2xl border-4 transition-all grid place-items-center p-2 text-center ${isOpen ? isMatched ? "bg-bob-green/20 border-bob-green" : "bg-card border-bob-blue" : "bg-bob-blue border-bob-blue hover:brightness-110"}`,
+							children: isOpen ? c.face === "emoji" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "text-4xl md:text-5xl",
+								children: c.item.emoji
+							}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "text-sm md:text-lg font-bold leading-tight",
+								children: c.item.en
+							}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "text-3xl md:text-4xl text-white",
+								children: "?"
+							})
+						}, c.key);
+					})
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "text-center mt-8",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: restart,
+						className: "text-sm text-parent-purple font-bold hover:underline",
+						children: "🔀 New board"
+					})
+				})
+			]
+		})]
+	});
+}
+export { Matching as component };

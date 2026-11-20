@@ -1,0 +1,141 @@
+import { n as __toESM } from "../_runtime.mjs";
+import { t as BobHeader } from "./BobHeader-C4Vf1Aa9.mjs";
+import { i as speakExtra, n as DIALOGUES, t as AGE_LABEL } from "./lessonsExtra-CK1HSDK1.mjs";
+import { i as Route$7 } from "./router-CIBvjZgR.mjs";
+import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
+import { y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
+// node_modules/.nitro/vite/services/ssr/assets/play.dialogues-Beqc2l9O.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
+var LANGS = [
+	"en",
+	"fr",
+	"ar"
+];
+var AGES = [
+	"little",
+	"kids",
+	"tweens"
+];
+function DialoguesPage() {
+	const { age: initialAge, lang: initialLang } = Route$7.useSearch();
+	const [age, setAge] = (0, import_react.useState)(initialAge);
+	const [lang, setLang] = (0, import_react.useState)(initialLang);
+	const [index, setIndex] = (0, import_react.useState)(0);
+	const list = DIALOGUES[age];
+	const dialogue = list[index % list.length];
+	const isRtl = lang === "ar";
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "min-h-screen bg-background",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(BobHeader, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
+			className: "max-w-3xl mx-auto p-6 md:p-10",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+				to: "/",
+				className: "text-sm text-muted-foreground hover:underline",
+				children: "← Home"
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "bg-bob-blue/10 rounded-[40px] border-4 border-white shadow-xl p-6 md:p-10 mt-4",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "text-center mb-6",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "text-6xl mb-2",
+								children: "💬"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+								className: "text-3xl md:text-4xl font-bold",
+								children: "Dialogues · محاورات"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-muted-foreground mt-1",
+								children: "Everyday conversations for real life."
+							})
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "flex justify-center gap-2 mb-3 flex-wrap",
+						children: AGES.map((a) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							onClick: () => {
+								setAge(a);
+								setIndex(0);
+							},
+							className: `px-3 py-1.5 text-sm rounded-2xl font-bold border-2 transition ${age === a ? "bg-bob-blue text-white border-bob-blue" : "bg-white border-border hover:border-bob-blue"}`,
+							children: AGE_LABEL[a]
+						}, a))
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "flex justify-center gap-2 mb-6 flex-wrap",
+						children: LANGS.map((l) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							onClick: () => setLang(l),
+							className: `px-4 py-2 rounded-2xl font-bold border-2 transition ${lang === l ? "bg-foreground text-background border-foreground" : "bg-white/70 border-border hover:border-foreground"}`,
+							children: l === "en" ? "English" : l === "fr" ? "Français" : "العربية"
+						}, l))
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "bg-white/90 rounded-3xl p-5 md:p-8",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-3 mb-4",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "text-4xl",
+								children: dialogue.emoji
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+								className: "text-2xl font-bold",
+								dir: isRtl ? "rtl" : "ltr",
+								style: isRtl ? { fontFamily: "var(--font-arabic)" } : void 0,
+								children: dialogue.title[lang]
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+							className: "space-y-3",
+							dir: isRtl ? "rtl" : "ltr",
+							style: isRtl ? { fontFamily: "var(--font-arabic)" } : void 0,
+							children: dialogue.lines.map((line, i) => {
+								const isA = line.speaker === "A";
+								return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
+									className: `flex ${isA ? "justify-start" : "justify-end"}`,
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+										onClick: () => speakExtra(line[lang], lang),
+										className: `max-w-[85%] px-4 py-3 rounded-2xl text-lg text-left hover:shadow-md transition ${isA ? "bg-bob-blue text-white" : "bg-bob-yellow text-foreground"}`,
+										title: "Tap to listen",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "block text-xs font-bold opacity-75 mb-0.5",
+											children: isA ? "👦 A" : "👧 B"
+										}), line[lang]]
+									})
+								}, i);
+							})
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "mt-6 flex flex-wrap justify-between gap-3",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+							onClick: () => speakExtra(dialogue.lines.map((l) => l[lang]).join(". "), lang),
+							className: "px-5 py-2.5 rounded-2xl bg-bob-green text-white font-bold shadow hover:-translate-y-0.5 transition",
+							children: "🔊 Play whole dialogue"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex gap-2",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								onClick: () => setIndex((i) => (i - 1 + list.length) % list.length),
+								className: "px-4 py-2 rounded-2xl bg-white border-2 border-border font-bold",
+								children: "← Prev"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								onClick: () => setIndex((i) => (i + 1) % list.length),
+								className: "px-4 py-2 rounded-2xl bg-bob-orange text-white font-bold",
+								children: "Next →"
+							})]
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+						className: "text-center text-sm text-muted-foreground mt-4",
+						children: [
+							index % list.length + 1,
+							" / ",
+							list.length
+						]
+					})
+				]
+			})]
+		})]
+	});
+}
+export { DialoguesPage as component };

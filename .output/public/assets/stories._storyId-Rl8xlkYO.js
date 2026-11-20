@@ -1,0 +1,1 @@
+import{s as e,t}from"./link-D5BNCOej.js";var n=e(),r=()=>(0,n.jsx)(`div`,{className:`min-h-screen grid place-items-center p-6 text-center`,children:(0,n.jsxs)(`div`,{children:[(0,n.jsx)(`p`,{className:`text-2xl font-bold mb-4`,children:`Story not found`}),(0,n.jsx)(t,{to:`/stories`,className:`underline`,children:`Back to stories`})]})});export{r as notFoundComponent};
